@@ -17,5 +17,7 @@ psql
 database create [database name] and \c [database name]
 run schema and seeds
 
-npm run db:reset (database reset)
 npm i cors (fix cors)
+npm i pg (postgres)
+npm i dotenv
+npm run db:reset (database reset)

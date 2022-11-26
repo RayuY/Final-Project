@@ -14,4 +14,10 @@ const getUserById = id => {
 	})
 }
 
-module.exports = {getAllUsers, getUserById}
+const getAllOwners = () => {
+	return db.query("SELECT * FROM owners;").then(data => {
+		return data.rows;
+	})
+}
+
+module.exports = {getAllUsers, getUserById, getAllOwners}
