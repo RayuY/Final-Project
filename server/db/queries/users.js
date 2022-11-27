@@ -2,22 +2,22 @@
 
 const db = require('../../configs/db.config');
 
-const getAllUsers = () => {
-	return db.query("SELECT * FROM users;").then(data => {
-		return data.rows;
-	})
-}
+const getAllCustomers = () => {
+  return db.query("SELECT * FROM customers;").then(data => {
+    return data.rows;
+  });
+};
 
-const getUserById = id => {
-	return db.query("SELECT * FROM users; WHERE id = $1", [id]).then(data => {
-		return data.rows;
-	})
-}
+const getCustomerById = id => {
+  return db.query("SELECT * FROM customers; WHERE id = $1", [id]).then(data => {
+    return data.rows;
+  });
+};
 
 const getAllOwners = () => {
-	return db.query("SELECT * FROM owners;").then(data => {
-		return data.rows;
-	})
-}
+  return db.query("SELECT * FROM owners;").then(data => {
+    return data.rows;
+  });
+};
 
-module.exports = {getAllUsers, getUserById, getAllOwners}
+module.exports = { getAllCustomers, getCustomerById, getAllOwners };
