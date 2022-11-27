@@ -8,37 +8,37 @@ function App() {
   const [owners, setOwners] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8000/users')
+    axios.get('http://localhost:8000/customers')
       .then((res) => {
-        setState(res.data.users)
+        setState(res.data.customers);
       })
       .catch(e => console.error(`Error: ${e}`));
-  }, [])
+  }, []);
 
   useEffect(() => {
     axios.get('http://localhost:8000/owners')
       .then((res) => {
-        setOwners(res.data.owners)
+        setOwners(res.data.owners);
       })
       .catch(e => console.error(`Error: ${e}`));
-  }, [])
+  }, []);
 
 
   const arr = [];
-  for (let user of state) {
-    arr.push(<h1>User ID: {user.id} User Email: {user.email} User Pass: {user.password}</h1>)
+  for (let customer of state) {
+    arr.push(<h1>customer ID: {customer.id} customer Email: {customer.email} customer Pass: {customer.password}</h1>);
   }
 
   const arr2 = [];
   for (let owner of owners) {
-    arr2.push(<h1>Owner ID: {owner.id} Owner Email: {owner.owner_email} Owner Pass: {owner.owner_password}</h1>)
+    arr2.push(<h1>Owner ID: {owner.id} Owner Email: {owner.email} Owner Pass: {owner.password}</h1>);
   }
 
 
   return (
     <div className="App">
       {arr}
-      {arr2}      
+      {arr2}
     </div>
   );
 }

@@ -3,11 +3,11 @@ const router = express.Router();
 const customers = require('../db/queries/customers');
 
 
-/* GET  customers listing. */
+/* GET customers listing. */
 router.get('/', (req, res) => {
-  customers.getAllOwners().then(data => {
+  customers.getAllCustomers().then(data => {
     console.log(data);
-    res.json({ owners: data });
+    res.json({ customers: data });
   });
 });
 
