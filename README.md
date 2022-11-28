@@ -9,6 +9,7 @@
 go into server 'npm install'
 go into client 'npm install'
 
+<!-- npm install react-icons -->
 open 2 terminals 'npm start'
 
 # Database set up (server folder)
