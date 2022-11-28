@@ -4,6 +4,7 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdOutlineRestaurantMenu } from 'react-icons/md'
 import images from '../../constants/images'
 import './Nav.css'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
 
@@ -16,7 +17,7 @@ const Navbar = () => {
         <img src={images.tablebae} alt="app logo" />
       </div>
       <ul className='app__navbar-links'>
-        <li className='p__opensans'><a href="#home">Home</a></li>
+        <li className='p__opensans'> <Link to={"/"}>Home</Link></li>
         <li className='p__opensans'><a href="#about">About</a></li>
         <li className='p__opensans'><a href="#Contact">Contact</a></li>
       </ul>

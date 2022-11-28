@@ -9,7 +9,10 @@
 go into server 'npm install'
 go into client 'npm install'
 
-<!-- npm install react-icons -->
+<!-- npm install react-icons --> -- inside client side
+npm install react-router-dom -s -- inside client side
+
+
 open 2 terminals 'npm start'
 
 # Database set up (server folder)
