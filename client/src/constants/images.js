@@ -20,6 +20,7 @@ import award05 from '../assets/award05.png';
 import sign from '../assets/sign.png';
 import quote from '../assets/quote.png';
 import tablebae from '../assets/tablebae.png';
+import RestaurantHomepage from '../assets/Restaurant-home-page.png';
 
 export default {
   bg,
@@ -44,4 +45,5 @@ export default {
   sign,
   quote,
   tablebae,
+  RestaurantHomepage
 };

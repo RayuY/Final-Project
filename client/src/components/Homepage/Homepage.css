@@ -1,0 +1,19 @@
+.homepage {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.image {
+  width: 100%;
+  height: 70em;
+  position: relative;
+  z-index: 3;
+}
+
+.content {
+  position: absolute;
+  z-index: 4;
+}
