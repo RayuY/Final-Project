@@ -14,16 +14,14 @@ const Navbar = () => {
   return (
     <nav className='app__navbar'>
       <div className='app__navbar-logo'>
+      <Link to={"/"}> 
         <img src={images.tablebae} alt="app logo" />
+      </Link>
       </div>
-      <ul className='app__navbar-links'>
-        <li className='p__opensans'> <Link to={"/"}>Home</Link></li>
-        <li className='p__opensans'><a href="#about">About</a></li>
-        <li className='p__opensans'><a href="#Contact">Contact</a></li>
-      </ul>
       <div className='app__navbar-login'>
-        <a href="#login" className='p__opensans'>Login / Register</a>
-        {/* <a href='/' className='p__opensans'>Book Table</a> */}
+        <a href="#login" className='p__opensans'>Login</a>
+        <div></div>
+        <a href='#register' className='p__opensans'>Register</a>
       </div>
 
       <div className='app__navbar-smallscreen'>
@@ -33,9 +31,8 @@ const Navbar = () => {
           <div className='app__navbar-smallscreen_overlay flex__center slide-bottom'>
             <MdOutlineRestaurantMenu fontSize={27} className="overlay__close" onClick={() => setToggleMenu(false)}/>
             <ul className='app__navbar-smallscreen_links'>
-              <li className='p__opensans'><a href="#home">Home</a></li>
-              <li className='p__opensans'><a href="#about">About</a></li>
-              <li className='p__opensans'><a href="#Contact">Contact</a></li>
+              <li className='p__opensans'><Link to={"/"}> Home</Link></li>
+              <li className='p__opensans'><Link to={"/AboutUs"}>About Us </Link></li>
             </ul>
           </div>
         )}
