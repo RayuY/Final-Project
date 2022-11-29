@@ -1,0 +1,64 @@
+.owner_table{
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  width: 50vw;
+  border: solid;
+  border-width: 2px;
+  border-radius: 10px;
+  background: var(--color-black);
+  color: var(--color-white);
+  padding: 30px 70px;
+}
+
+.owner_table_main {
+  display: flex;
+  flex-direction: row;
+  border: 2px;
+  justify-content: space-around;
+  width: 100%;
+
+}
+
+.owner_table_num_of_seats {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.list_of_seats {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.owner_table_num_of_tables {
+  display: flex;
+  flex-direction: column;
+}
+
+.num_of_tables {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  width: 50px;
+  height: 10px;
+}
+
+.custom__button {
+  width: 150px;
+  font-size: 20px;
+  justify-content:flex-end;
+}
+
+
+.list_of_seats li {
+  padding: 5px;
+}
+
+.num_of_tables input {
+  padding: 5px;
+}

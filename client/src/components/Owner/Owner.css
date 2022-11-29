@@ -2,7 +2,33 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(100, 100, 100);
-  padding-top: 15px
-  /* height: 600px; */
+  /* background-color: rgba(100, 100, 100); */
+  background: url("http://cdn.cnn.com/cnnnext/dam/assets/190710135245-12-waterfront-restaurants.jpg");
+  /* background: url("https://mcewangroup.ca/wp-content/uploads/2019/01/mobile-mcewan-restaurants-bymark.jpg"); */
+  background-position: center -1010px;
+  background-repeat: no-repeat;
+  padding-top: 15px;
+  height: 690px;
+}
+
+.owner_page_spoon {
+  width: 10vw;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+}
+.owner_page_spoon img {
+  color: var(--color-black)
+}
+
+.owner_bottom_links {
+  width: 80vw;
+  height: 50vw;
+  display: flex;
+  justify-content: space-between;
+  align-items:flex-end;
+}
+
+.owner_bottom_links button {
+  width: 210px;
 }

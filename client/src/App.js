@@ -26,7 +26,9 @@ function App() {
         <Routes>
             <Route exact path="/" element={<Homepage />} />
 
-            <Route exact path="/owner" element={<Owner />} />
+            <Route exact path="/owners" element={<Owner />} />
+
+            <Route exact path="/owners/:id" element={<Owner />} />
 
             <Route exact path="/user" element={<User />} />
 
