@@ -7,5 +7,5 @@ CREATE TABLE restaurants (
   title VARCHAR(255) NOT NULL,
   description TEXT,
   img TEXT,
-  spot_available boolean NOT NULL DEFAULT false
+  spot INT 
 );
