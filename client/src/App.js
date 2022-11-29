@@ -24,7 +24,7 @@ function App() {
         <Navbar />
 
         <Routes>
-          <switch>
+
             <Route exact path="/" element={<Homepage />} />
 
             <Route exact path="/owner" element={<Owner />} />
@@ -32,7 +32,6 @@ function App() {
             <Route exact path="/user" element={<User />} />
 
             <Route exact path="/about" element={<AboutUs />} />
-          </switch>
 
         </Routes>
 
