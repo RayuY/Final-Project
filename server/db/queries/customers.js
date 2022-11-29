@@ -20,4 +20,10 @@ const getAllOwners = () => {
   });
 };
 
-module.exports = { getAllCustomers, getCustomerById, getAllOwners };
+const getOwnerById = id => {
+  return db.query("SELECT * FROM owners WHERE id = $1", [id]).then(data => {
+    return data.rows;
+  });
+};
+
+module.exports = { getAllCustomers, getCustomerById, getAllOwners, getOwnerById };
