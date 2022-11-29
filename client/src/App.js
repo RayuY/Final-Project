@@ -23,15 +23,16 @@ function App() {
         <Navbar />
 
         <Routes>
+          <switch>
+            <Route exact path="/" element={<Homepage />} />
 
-          <Route exact path="/" element={<Homepage />} />
+            <Route exact path="/owner" element={<Owner />} />
 
-          <Route exact path="/owner" element={<Owner />} />
+            <Route exact path="/user" element={<User />} />
 
-          <Route exact path="/user" element={<User />} />
+            <Route exact path="/about" element={<AboutUs />} />
+          </switch>
 
-          <Route exact path="/about" element={<AboutUs />} />
-        
         </Routes>
 
         <Footer />
