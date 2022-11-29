@@ -11,6 +11,7 @@ import {
   Redirect,
 } from "react-router-dom";
 
+import ScrollButton from "./components/ScrollButton/ScrollButton"
 import Owner from "./components/Owner/Owner";
 import Homepage from "./components/Homepage/Homepage";
 import User from "./components/User/User";
@@ -33,6 +34,8 @@ function App() {
 
         <Footer />
       </Router>
+      
+      <ScrollButton />
     </div>
   );
 }
