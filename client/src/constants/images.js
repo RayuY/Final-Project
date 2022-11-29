@@ -5,7 +5,7 @@ import gallery01 from '../assets/gallery01.png';
 import gallery02 from '../assets/gallery02.png';
 import gallery03 from '../assets/gallery03.png';
 import gallery04 from '../assets/gallery04.png';
-import knife from '../assets/knife.png';
+import aboutImg from '../assets/aboutImg.png';
 import logo from '../assets/logo.png';
 import menu from '../assets/menu.png';
 import overlaybg from '../assets/overlaybg.png';
@@ -20,6 +20,7 @@ import award05 from '../assets/award05.png';
 import sign from '../assets/sign.png';
 import quote from '../assets/quote.png';
 import tablebae from '../assets/tablebae.png';
+import RestaurantHomepage from '../assets/Restaurant-home-page.png';
 
 export default {
   bg,
@@ -29,7 +30,7 @@ export default {
   gallery02,
   gallery03,
   gallery04,
-  knife,
+  aboutImg,
   logo,
   menu,
   overlaybg,
@@ -44,4 +45,5 @@ export default {
   sign,
   quote,
   tablebae,
+  RestaurantHomepage
 };

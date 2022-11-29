@@ -68,7 +68,6 @@
 }
 
 .p__cormorant {
-  font-family: var(--font-base);
   color: var(--color-white);
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -89,7 +88,6 @@
 }
 
 .headtext__cormorant {
-  font-family: var(--font-base);
   color: var(--color-golden);
   font-size: 64px;
   line-height: 83.2px;
