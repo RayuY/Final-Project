@@ -10,7 +10,13 @@
   border-radius: 10px;
   background: var(--color-black);
   color: var(--color-white);
-  padding: 30px 70px;
+  padding: 30px 60px;
+}
+
+.owner_table_name {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
 }
 
 .owner_table_main {
@@ -48,12 +54,17 @@
   height: 10px;
 }
 
+.button_list_tables {
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
 .custom__button {
   width: 150px;
   font-size: 20px;
   justify-content:flex-end;
 }
-
 
 .list_of_seats li {
   padding: 5px;

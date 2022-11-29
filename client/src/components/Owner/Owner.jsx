@@ -46,9 +46,9 @@ const Owner = () => {
       </div>
 
       <div className="owner_page_restaurant">
-        <OwnerRestaurant />
+        {/* <OwnerRestaurant /> */}
         {/* <OwnerRestaurantInfo /> */}
-        {/* {<OwnerTable />} */}
+        {<OwnerTable />}
       </div>
 
       <div className="owner_bottom_links">
