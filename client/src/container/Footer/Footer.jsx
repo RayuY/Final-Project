@@ -1,9 +1,11 @@
 import React from 'react';
 import { FiFacebook, FiTwitter, FiInstagram } from 'react-icons/fi';
+import { Link } from 'react-router-dom'
 
 import { FooterOverlay, Newsletter } from '../../components';
 import { images } from '../../constants';
 import './Footer.css';
+
 
 const Footer = () => (
   <div className="app__footer section__padding" id="login">
@@ -37,7 +39,10 @@ const Footer = () => (
     </div>
 
     <div className="footer__copyright">
-      <p className="p__opensans">2022 Table Bae. All Rights reserved.</p>
+      <ul className='app__navbar-links'>
+        <li className='p__opensans '><Link to={"/about"}>About Us</Link></li>
+      </ul>
+        <p className="p__opensans">2022 Table Bae. All Rights reserved.</p>
     </div>
 
   </div>

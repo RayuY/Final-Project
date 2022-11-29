@@ -14,6 +14,7 @@ import {
 import Owner from "./components/Owner/Owner";
 import Homepage from "./components/Homepage/Homepage";
 import User from "./components/User/User";
+import AboutUs from "./components/AboutUs/AboutUs";
 
 function App() {
   return (
@@ -22,13 +23,16 @@ function App() {
         <Navbar />
 
         <Routes>
+          <switch>
+            <Route exact path="/" element={<Homepage />} />
 
-          <Route exact path="/" element={<Homepage />} />
+            <Route exact path="/owner" element={<Owner />} />
 
-          <Route exact path="/owner" element={<Owner />} />
+            <Route exact path="/user" element={<User />} />
 
-          <Route exact path="/user" element={<User />} />
-        
+            <Route exact path="/about" element={<AboutUs />} />
+          </switch>
+
         </Routes>
 
         <Footer />
