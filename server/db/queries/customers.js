@@ -9,7 +9,7 @@ const getAllCustomers = () => {
 };
 
 const getCustomerById = id => {
-  return db.query("SELECT * FROM customers; WHERE id = $1", [id]).then(data => {
+  return db.query("SELECT * FROM customers WHERE id = $1", [id]).then(data => {
     return data.rows;
   });
 };

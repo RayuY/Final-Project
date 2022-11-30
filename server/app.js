@@ -24,5 +24,6 @@ app.use('/customers/:id', customersRouter);
 app.use('/owners', ownersRouter);
 app.use('/owners/:id', ownersRouter);
 app.use('/restaurants', restaurantsRouter);
+app.use('/restaurants/:id', restaurantsRouter);
 
 module.exports = app;
