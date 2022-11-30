@@ -11,16 +11,16 @@ import { IdContext } from "../../IdContext";
 
 const Owner = () => {
   const [state, setState] = useState([]);
-  const id = useParams();
+  const { id } = useParams();
 
-  const test = useContext(IdContext)
+  const test = useContext(IdContext);
 
-  console.log("id:", id.id);
+
 
   useEffect(() => {
-    // axios.get(`http://localhost:8000/owners/:${id}`)
+    // axios.get(`http://localhost:8000/owners/:${id}`);
     axios
-      .get(`http://localhost:8000/owners/1`)
+      .get(`http://localhost:8000/owners/${id}`)
       .then((res) => {
         setState(res.data.owners);
       })
@@ -55,8 +55,8 @@ const Owner = () => {
       </div>
 
       <div className="owner_bottom_links">
-      <button className="custom__button">See listed tables</button>
-      <button className="custom__button">Back to main page</button>
+        <button className="custom__button">See listed tables</button>
+        <button className="custom__button">Back to main page</button>
       </div>
     </div>
   );
