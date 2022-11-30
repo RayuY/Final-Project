@@ -1,21 +1,7 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
 import "./App.css";
-import { Navbar } from "./components";
+import { Navbar, ScrollButton, Owner, Homepage, User, AboutUs } from "./components";
 import { Footer } from "./container";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Link,
-  Redirect,
-} from "react-router-dom";
-
-import ScrollButton from "./components/ScrollButton/ScrollButton"
-import Owner from "./components/Owner/Owner";
-import Homepage from "./components/Homepage/Homepage";
-import User from "./components/User/User";
-import AboutUs from "./components/AboutUs/AboutUs";
+import { BrowserRouter as Router, Route, Routes, Link, Redirect, } from "react-router-dom";
 
 function App() {
   return (
