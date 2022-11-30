@@ -3,13 +3,22 @@ import { Navbar, ScrollButton, Owner, Homepage, User, AboutUs } from "./componen
 import { Footer } from "./container";
 import { BrowserRouter as Router, Route, Routes, Link, Redirect, } from "react-router-dom";
 
+import { UserContext } from './UserContext'
+import { useMemo, useState } from "react";
+
 function App() {
+
+  const [user, setUser] = useState('Guest');
+  const role = useMemo(() => ({ user, setUser }), [user, setUser])
+
   return (
     <div>
-      <Router>
-        <Navbar />
+      <UserContext.Provider value={role}>
+        <Router>
+          <Navbar />
 
-        <Routes>
+
+          <Routes>
             <Route exact path="/" element={<Homepage />} />
 
             <Route exact path="/owner" element={<Owner />} />
@@ -18,12 +27,13 @@ function App() {
 
             <Route exact path="/about" element={<AboutUs />} />
 
-        </Routes>
+          </Routes>
 
-        <Footer />
-      </Router>
-      
-      <ScrollButton />
+          <Footer />
+        </Router>
+
+        <ScrollButton />
+      </UserContext.Provider>
     </div>
   );
 }
