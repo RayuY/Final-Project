@@ -1,10 +1,13 @@
 import "./App.css";
 import { Navbar, ScrollButton, Owner, Homepage, User, AboutUs } from "./components";
 import { Footer } from "./container";
+
 import { BrowserRouter as Router, Route, Routes, Link, Redirect, } from "react-router-dom";
 
 import { UserContext } from './UserContext'
 import { useMemo, useState } from "react";
+import Restaurant from "./components/Restaurant/Restaurant";
+import OwnerReservation from "./components/OwnerReservation/OwnerReservation";
 
 function App() {
 
@@ -13,19 +16,26 @@ function App() {
 
   return (
     <div>
+
       <UserContext.Provider value={role}>
         <Router>
           <Navbar />
 
 
+
           <Routes>
             <Route exact path="/" element={<Homepage />} />
 
-            <Route exact path="/owner" element={<Owner />} />
+            <Route exact path="/restaurants/:id" element={<Restaurant />} />
+
+            <Route exact path="/owners" element={<Owner />} />
+
+            <Route exact path="/owners/:id" element={<Owner />} />
 
             <Route exact path="/user" element={<User />} />
 
-            <Route exact path="/about" element={<AboutUs />} />
+            <Route exact path="/reservations/:id" element={<OwnerReservation />}/>
+
 
           </Routes>
 
@@ -34,6 +44,7 @@ function App() {
 
         <ScrollButton />
       </UserContext.Provider>
+
     </div>
   );
 }
