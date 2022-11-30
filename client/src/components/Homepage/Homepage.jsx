@@ -2,14 +2,14 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import "./Homepage.css";
 import { images } from "../../constants";
-import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs"
+import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
 import axios from "axios";
 
 import { UserContext } from '../../UserContext';
 
 const Homepage = () => {
-
-  const {user, setUser} = useContext(UserContext)
+  
+  const { user, setUser } = useContext(UserContext);
   const [restaurant, setRestaurant] = useState([]);
 
   useEffect(() => {
