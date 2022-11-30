@@ -1,6 +1,7 @@
 import React from 'react'
 import { useRef, useState, useEffect, useContext } from 'react'
 import './Login.css'
+import { images } from "../../constants";
 
 const Login = () => {
   const userRef = useRef();
@@ -20,7 +21,7 @@ const Login = () => {
   }
 
   return (
-    <div className='login__div'>
+    <div className='login__div login_page'>
       <section className='login__section'>
         <h1 className='login__font'>Sign In</h1>
         <form className='login__form' onSubmit={handleSubmit}>

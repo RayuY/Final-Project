@@ -26,7 +26,7 @@ const Register = () => {
   }
 
   return (
-    <div className="register__div">
+    <div className="register__div register_page">
         <section className='register__section'>
           <h1 className='register__font'>Register</h1>
           <form onSubmit={handleSubmit} className='register__form'>

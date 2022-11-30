@@ -9,10 +9,7 @@ import { UserContext } from '../../UserContext';
 
 const Homepage = () => {
 
-
   const {user, setUser} = useContext(UserContext)
-
-
   const [restaurant, setRestaurant] = useState([]);
 
   useEffect(() => {
