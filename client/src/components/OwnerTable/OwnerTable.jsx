@@ -3,7 +3,7 @@ import { IdContext } from "../../IdContext";
 
 import "./OwnerTable.css";
 
-function OwnerTable() {
+function OwnerTable(props) {
 
   const test = useContext(IdContext);
 
@@ -35,7 +35,7 @@ function OwnerTable() {
       </div>
 
       <div className="button_list_tables">
-        <button className="custom__button">List tables!</button>
+        <button className="custom__button" onClick={() => props.setOwnerView("OwnerReservation")} >List tables!</button>
       </div>
     </div>
   );
