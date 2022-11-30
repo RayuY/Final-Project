@@ -17,6 +17,7 @@ import Homepage from "./components/Homepage/Homepage";
 import User from "./components/User/User";
 import AboutUs from "./components/AboutUs/AboutUs";
 import { IdContext } from "./IdContext";
+import Restaurant from "./components/Restaurant/Restaurant";
 
 function App() {
   return (
@@ -27,6 +28,8 @@ function App() {
 
           <Routes>
             <Route exact path="/" element={<Homepage />} />
+
+            <Route exact path="/restaurants/:id" element={<Restaurant />} />
 
             <Route exact path="/owners" element={<Owner />} />
 

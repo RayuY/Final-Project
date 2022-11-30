@@ -7,4 +7,10 @@ const getAllRestaurants = () => {
   });
 };
 
-module.exports = { getAllRestaurants };
+const getRestaurantById = id => {
+  return db.query("SELECT * FROM restaurants WHERE id = $1", [id]).then(data => {
+    return data.rows;
+  });
+};
+
+module.exports = { getAllRestaurants, getRestaurantById };

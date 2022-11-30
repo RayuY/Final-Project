@@ -12,4 +12,12 @@ router.get('/', (req, res) => {
   });
 });
 
+router.get('/:id', (req, res) => {
+  const id = req.params.id;
+  restaurants.getRestaurantById(id).then(data => {
+    console.log(data);
+    res.json({ restaurants: data });
+  });
+});
+
 module.exports = router;
