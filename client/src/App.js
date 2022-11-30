@@ -25,18 +25,14 @@ function App() {
 
           <Routes>
             <Route exact path="/" element={<Homepage />} />
-
             <Route exact path="/restaurants/:id" element={<Restaurant />} />
-
             <Route exact path="/owners" element={<Owner />} />
-
             <Route exact path="/owners/:id" element={<Owner />} />
-
             <Route exact path="/user" element={<User />} />
-
+            <Route exact path="/about" element={<AboutUs />} />
+            <Route exact path="/login" element={<Login />} />
+            <Route exact path="/register" element={<Register />} />
             <Route exact path="/reservations/:id" element={<OwnerReservation />}/>
-
-
           </Routes>
 
           <Footer />
@@ -44,7 +40,6 @@ function App() {
 
         <ScrollButton />
       </UserContext.Provider>
-
     </div>
   );
 }
