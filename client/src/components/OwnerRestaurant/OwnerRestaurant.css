@@ -1,0 +1,21 @@
+.owner_restaurant {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.owner_restaurant_image {
+  height: 350px;
+  width: 300px;
+  border: solid;
+  border-width: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.custom__button {
+  height: 40px;
+  width: 120px;
+  margin: 30px 0;
+}

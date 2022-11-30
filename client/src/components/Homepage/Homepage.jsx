@@ -1,23 +1,50 @@
-import React from "react";
 
+import React, { useState, useEffect, useRef, useContext } from "react";
+import "./Homepage.css";
 import { images } from "../../constants";
-import './Homepage.css';
+import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs"
+
+import { UserContext } from '../../UserContext';
 
 const Homepage = () => {
+
+
+  const {user, setUser} = useContext(UserContext)
+
+
+  const [restaurant, setRestaurant] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/restaurants")
+      .then((res) => {
+        setRestaurant(res.data.restaurants);
+        console.log("--------------");
+        console.log("res.data", res.data.restaurants);
+        console.log("--------------");
+      })
+      .catch((e) => console.error(`Error: ${e}`));
+  }, []);
+
+  const displayRestaurants = restaurant.map((restaurant, index) => {
+    return (
+      <div className="restaurantContainer" key={index}>
+        <h1>{restaurant.title}</h1>
+        <img src={restaurant.img} alt="restaurant pic" />
+      </div>
+    );
+  });
+
   return (
     <div>
-
-    {/* <h1 className='app__navbar'>
-      <img src={images.gallery01} alt="app logo" />
-      <img src={images.gallery02} alt="app logo" />
-      <img src={images.gallery03} alt="app logo" />
-      <img src={images.gallery04} alt="app logo" />
-    </h1> */}
-
-    <div className="homepage">
-      <h1 className="content">MattAldwinRay's Restaurants go here</h1>
-      <img className="image" src={images.RestaurantHomepage} alt="Restaurant interior" />
-    </div>
+      <div className="homepage">
+        <div className="content">{displayRestaurants}</div>
+        <img
+          className="image"
+          src={images.RestaurantHomepage}
+          alt="Restaurant interior"
+        />
+      </div>
 
     </div>
   );
