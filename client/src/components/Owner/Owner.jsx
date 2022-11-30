@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
@@ -7,10 +7,13 @@ import "./Owner.css";
 import OwnerRestaurant from "../OwnerRestaurant/OwnerRestaurant";
 import OwnerRestaurantInfo from "../OwnerRestaurantInfo/OwnerRestaurantInfo";
 import OwnerTable from "../OwnerTable/OwnerTable";
+import { IdContext } from "../../IdContext";
 
 const Owner = () => {
   const [state, setState] = useState([]);
   const id = useParams();
+
+  const test = useContext(IdContext)
 
   console.log("id:", id);
 

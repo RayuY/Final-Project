@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import { IdContext } from "../../IdContext";
 
 import "./OwnerTable.css";
 
 function OwnerTable() {
+
+  const test = useContext(IdContext);
+
   return (
     <div className="owner_table">
-      <h2 className="owner_table_name">Restaurant Name</h2>
+      <h2 className="owner_table_name">Restaurant Name {test}</h2>
       <div className="owner_table_main">
         <div className="owner_table_num_of_seats">
           <h3>Number of Seats</h3>

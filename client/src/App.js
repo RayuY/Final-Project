@@ -11,19 +11,21 @@ import {
   Redirect,
 } from "react-router-dom";
 
-import ScrollButton from "./components/ScrollButton/ScrollButton"
+import ScrollButton from "./components/ScrollButton/ScrollButton";
 import Owner from "./components/Owner/Owner";
 import Homepage from "./components/Homepage/Homepage";
 import User from "./components/User/User";
 import AboutUs from "./components/AboutUs/AboutUs";
+import { IdContext } from "./IdContext";
 
 function App() {
   return (
     <div>
       <Router>
-        <Navbar />
+        <IdContext.Provider value="this is the Id">
+          <Navbar />
 
-        <Routes>
+          <Routes>
             <Route exact path="/" element={<Homepage />} />
 
             <Route exact path="/owners" element={<Owner />} />
@@ -33,12 +35,12 @@ function App() {
             <Route exact path="/user" element={<User />} />
 
             <Route exact path="/about" element={<AboutUs />} />
+          </Routes>
 
-        </Routes>
-
-        <Footer />
+          <Footer />
+        </IdContext.Provider>
       </Router>
-      
+
       <ScrollButton />
     </div>
   );
