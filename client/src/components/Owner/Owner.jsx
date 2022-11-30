@@ -15,7 +15,7 @@ const Owner = () => {
 
   const test = useContext(IdContext)
 
-  console.log("id:", id);
+  console.log("id:", id.id);
 
   useEffect(() => {
     // axios.get(`http://localhost:8000/owners/:${id}`)

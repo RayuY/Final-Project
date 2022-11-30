@@ -7,6 +7,7 @@ const cors = require('cors');
 const indexRouter = require('./routes/index');
 const customersRouter = require('./routes/customers');
 const ownersRouter = require('./routes/owners');
+const restaurantsRouter = require('./routes/restaurants');
 
 const app = express();
 
@@ -22,5 +23,6 @@ app.use('/customers', customersRouter);
 app.use('/customers/:id', customersRouter);
 app.use('/owners', ownersRouter);
 app.use('/owners/:id', ownersRouter);
+app.use('/restaurants', restaurantsRouter);
 
 module.exports = app;
