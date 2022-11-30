@@ -23,7 +23,7 @@ function OwnerReservation(props) {
 
   return (
     <div className="owner_table">
-      <h2 className="owner_table_name">Restaurant Name Here  :D</h2>
+      <h2 className="owner_table_name">Listed tables</h2>
       <div className="owner_table_main">
         <div className="owner_table_num_of_seats">
           <h3>Number of Seats</h3>
