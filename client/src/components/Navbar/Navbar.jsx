@@ -19,9 +19,10 @@ const Navbar = () => {
       </Link>
       </div>
       <div className='app__navbar-login'>
-        <a href="#login" className='p__opensans'>Login</a>
+        {/* <a href="#login" className='p__opensans'>Login</a> */}
+        <h1 className='p__opensans'><Link to={"/login"}> Login</Link></h1>
         <div></div>
-        <a href='#register' className='p__opensans'>Register</a>
+        <h1 className='p__opensans'><Link to={"/register"}> Register</Link></h1>
       </div>
 
       <div className='app__navbar-smallscreen'>

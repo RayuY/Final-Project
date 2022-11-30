@@ -16,6 +16,8 @@ import Owner from "./components/Owner/Owner";
 import Homepage from "./components/Homepage/Homepage";
 import User from "./components/User/User";
 import AboutUs from "./components/AboutUs/AboutUs";
+import Login from "./components/Login/Login";
+import Register from "./components/Register/Register";
 
 function App() {
   return (
@@ -25,13 +27,11 @@ function App() {
 
         <Routes>
             <Route exact path="/" element={<Homepage />} />
-
             <Route exact path="/owner" element={<Owner />} />
-
             <Route exact path="/user" element={<User />} />
-
             <Route exact path="/about" element={<AboutUs />} />
-
+            <Route exact path="/login" element={<Login />} />
+            <Route exact path="/register" element={<Register />} />
         </Routes>
 
         <Footer />
