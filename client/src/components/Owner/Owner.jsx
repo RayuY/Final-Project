@@ -1,47 +1,65 @@
+import React, { useState, useEffect, useContext } from "react";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-
-import { images } from '../../constants'
+import { images } from "../../constants";
+import "./Owner.css";
+import OwnerRestaurant from "../OwnerRestaurant/OwnerRestaurant";
+import OwnerRestaurantInfo from "../OwnerRestaurantInfo/OwnerRestaurantInfo";
+import OwnerTable from "../OwnerTable/OwnerTable";
+import { IdContext } from "../../IdContext";
 
 const Owner = () => {
-  
   const [state, setState] = useState([]);
+  const id = useParams();
+
+  const test = useContext(IdContext)
+
+  console.log("id:", id.id);
 
   useEffect(() => {
     // axios.get(`http://localhost:8000/owners/:${id}`)
-    axios.get(`http://localhost:8000/owners/1`)
+    axios
+      .get(`http://localhost:8000/owners/1`)
       .then((res) => {
-        setState(res.data.owners)
-        console.log("--------------")
-        console.log("res.data", res.data.owners)
-        console.log("--------------")
-
+        setState(res.data.owners);
       })
-      .catch(e => console.error(`Error: ${e}`));
-  }, [])
+      .catch((e) => console.error(`Error: ${e}`));
+  }, []);
 
   const owner = state.map((element, index) => {
-    return <h1 key={index}>{element.name}</h1>
-  })
-
-  // for (let test of state) {
-  //   owner.push(<h1>{test.name}</h1>)
-  // }
-
-  // const arr = [];
-  // for (let user of state) {
-  //   arr.push(<h1>User ID: {user.id} User Email: {user.email} User Pass: {user.password}</h1>)
-  // }
-
+    return <h1 key={index}>{element.name}</h1>;
+  });
 
   return (
-    <div>
-      Hello {owner} yo!
-      {/* <OwnerById /> */}
-    </div>
-  )
+    <div className="owner_page">
+      <h3>Hello</h3>
+      {owner}
+      <div className="owner_page_spoon">
+        <img
+          src={images.spoon}
+          className="spoon__img"
+          style={{ marginTop: 15, transform: "rotate(180deg)" }}
+        />
+        <img
+          src={images.spoon}
+          className="spoon__img"
+          style={{ marginTop: 15 }}
+        />
+      </div>
 
-}
+      <div className="owner_page_restaurant">
+        {/* <OwnerRestaurant /> */}
+        {/* <OwnerRestaurantInfo /> */}
+        {<OwnerTable />}
+      </div>
+
+      <div className="owner_bottom_links">
+      <button className="custom__button">See listed tables</button>
+      <button className="custom__button">Back to main page</button>
+      </div>
+    </div>
+  );
+};
 
 export default Owner;
