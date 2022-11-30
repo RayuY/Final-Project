@@ -18,6 +18,7 @@ import User from "./components/User/User";
 import AboutUs from "./components/AboutUs/AboutUs";
 import { IdContext } from "./IdContext";
 import Restaurant from "./components/Restaurant/Restaurant";
+import OwnerReservation from "./components/OwnerReservation/OwnerReservation";
 
 function App() {
   return (
@@ -36,6 +37,8 @@ function App() {
             <Route exact path="/owners/:id" element={<Owner />} />
 
             <Route exact path="/user" element={<User />} />
+
+            <Route exact path="/reservations/:id" element={<OwnerReservation />}/>
 
             <Route exact path="/about" element={<AboutUs />} />
           </Routes>

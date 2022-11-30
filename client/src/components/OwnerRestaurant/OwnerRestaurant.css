@@ -11,6 +11,7 @@
   border: solid;
   border-width: 10px;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .custom__button {

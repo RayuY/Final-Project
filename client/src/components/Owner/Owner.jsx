@@ -1,6 +1,12 @@
 import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import {
+  useParams,
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+} from "react-router-dom";
 
 import { images } from "../../constants";
 import "./Owner.css";
@@ -8,6 +14,7 @@ import OwnerRestaurant from "../OwnerRestaurant/OwnerRestaurant";
 import OwnerRestaurantInfo from "../OwnerRestaurantInfo/OwnerRestaurantInfo";
 import OwnerTable from "../OwnerTable/OwnerTable";
 import { IdContext } from "../../IdContext";
+import OwnerReservation from "../OwnerReservation/OwnerReservation";
 
 const Owner = () => {
   const [state, setState] = useState([]);
@@ -15,6 +22,10 @@ const Owner = () => {
 
   const test = useContext(IdContext);
 
+
+  const [ownerView, setOwnerView] = useState("OwnerRestaurant")
+
+  
 
 
   useEffect(() => {
@@ -49,14 +60,18 @@ const Owner = () => {
       </div>
 
       <div className="owner_page_restaurant">
-        {/* <OwnerRestaurant /> */}
-        {/* <OwnerRestaurantInfo /> */}
-        {<OwnerTable />}
+          { ownerView === "OwnerRestaurant" && <OwnerRestaurant setOwnerView={setOwnerView} /> }  
+          { ownerView === "OwnerRestaurantInfo" && <OwnerRestaurantInfo setOwnerView={setOwnerView} id={id} /> }  
+          { ownerView === "OwnerTable" && <OwnerTable setOwnerView={setOwnerView} /> }  
+          { ownerView === "OwnerReservation" && <OwnerReservation setOwnerView={setOwnerView} /> }  
+
       </div>
 
+
+
       <div className="owner_bottom_links">
-        <button className="custom__button">See listed tables</button>
-        <button className="custom__button">Back to main page</button>
+        <button className="custom__button" onClick={() => setOwnerView("OwnerReservation")} >See listed tables</button>
+        <button className="custom__button" onClick={() => setOwnerView("OwnerRestaurant")}>Back to main page</button>
       </div>
     </div>
   );
