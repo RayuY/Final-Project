@@ -41,7 +41,7 @@ const Navbar = () => {
       }
       {user === "Owner" &&
         <ul className="app__navbar-links">
-          <li className='p__opensans'><Link to={"/owner"}> Manage Restaurants</Link></li>
+          <li className='p__opensans'><Link to={"/owners/1"}> Manage Restaurants</Link></li>
         </ul>
       }
 
