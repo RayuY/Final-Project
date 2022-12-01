@@ -16,6 +16,7 @@
   justify-content: space-between;
   padding-bottom: 2rem;
 }
+
 .owner_page_spoon img {
   color: var(--color-black)
 }
@@ -25,7 +26,7 @@
   height: 50vw;
   display: flex;
   justify-content: space-between;
-  align-items:flex-end;
+  align-items: flex-end;
 }
 
 .owner_bottom_links button {
