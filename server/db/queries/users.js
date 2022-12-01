@@ -14,3 +14,5 @@ const getUserById = id => {
 };
 
 module.exports = { getAllUsers, getUserById };
+
+module.exports = { getAllUsers, getUserById, getAllOwners, getOwnerById };

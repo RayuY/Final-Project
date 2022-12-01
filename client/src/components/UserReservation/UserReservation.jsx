@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import './UserReservation.css';
 import { images } from "../../constants";
+import User from "../User/User";
 
 
 function UserReservation(props) {

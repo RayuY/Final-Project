@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 
 /* GET  owner by Id. */
 router.get('/:id', (req, res) => {
-  const id = req.params.id
+  const id = req.params.id;
   console.log("test test", id);
   owners.getOwnerById(id).then(data => {
     console.log(data);
