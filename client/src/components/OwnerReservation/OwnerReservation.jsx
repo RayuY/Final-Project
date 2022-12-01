@@ -41,17 +41,17 @@ function OwnerReservation(props) {
             <h3>Number of Tables</h3>
             <div className="num_of_tables">
               {reservationItem === 2 ? (
-                1
+                <h3>1</h3>
               ) : (
                 <input type="table_value_2" placeholder="0" />
               )}
               {reservationItem === 4 ? (
-                1
+                <h3>1</h3>
               ) : (
                 <input type="table_value_2" placeholder="0" />
               )}
               {reservationItem === 6 ? (
-                1
+                <h3>1</h3>
               ) : (
                 <input type="table_value_2" placeholder="0" />
               )}
@@ -65,7 +65,12 @@ function OwnerReservation(props) {
       </div>
 
       <div className="button_list_tables">
-        <button className="custom__button" onClick={() => props.setOwnerView("OwnerTable")} >Edit tables!</button>
+        <button
+          className="custom__button"
+          onClick={() => props.setOwnerView("OwnerTable")}
+        >
+          Edit tables!
+        </button>
       </div>
     </div>
   );
