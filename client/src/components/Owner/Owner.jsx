@@ -46,6 +46,7 @@ const Owner = () => {
   }, []);
 
   const owner = state.find((i) => i.id === userId);
+
   if (!owner) {
     return null;
   }
