@@ -19,33 +19,41 @@ import OwnerReservation from "../OwnerReservation/OwnerReservation";
 const Owner = () => {
   const [state, setState] = useState([]);
   const { id } = useParams();
-
-  const test = useContext(IdContext);
-
+  const userId = Number(id);
 
   const [ownerView, setOwnerView] = useState("OwnerRestaurant")
 
-  
+  // useEffect(() => {
+  //   axios
+  //     .get(`http://localhost:8000/owners/${id}`)
+  //     .then((res) => {
+  //       setState(res.data.owners);
+  //     })
+  //     .catch((e) => console.error(`Error: ${e}`));
+  // }, []);
 
+  // const owner = state.map((element, index) => {
+  //   return <h1 key={index}>{element.name}</h1>;
+  // });
 
   useEffect(() => {
-    // axios.get(`http://localhost:8000/owners/:${id}`);
     axios
-      .get(`http://localhost:8000/owners/${id}`)
+      .get(`http://localhost:8000/owners`)
       .then((res) => {
         setState(res.data.owners);
       })
       .catch((e) => console.error(`Error: ${e}`));
   }, []);
 
-  const owner = state.map((element, index) => {
-    return <h1 key={index}>{element.name}</h1>;
-  });
+  const owner = state.find((i) => i.id === userId);
+  if (!owner) {
+    return null;
+  }
 
   return (
     <div className="owner_page">
       <h3>Hello</h3>
-      {owner}
+      <h1>{owner.name}</h1>
       <div className="owner_page_spoon">
         <img
           src={images.spoon}
