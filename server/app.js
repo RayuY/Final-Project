@@ -5,7 +5,7 @@ const logger = require('morgan');
 const cors = require('cors');
 
 const indexRouter = require('./routes/index');
-const customersRouter = require('./routes/customers');
+const usersRouter = require('./routes/users');
 const ownersRouter = require('./routes/owners');
 const restaurantsRouter = require('./routes/restaurants');
 const reservationsRouter = require('./routes/reservations');
@@ -20,8 +20,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/customers', customersRouter);
-app.use('/customers/:id', customersRouter);
+app.use('/users', usersRouter);
+app.use('/users/:id', usersRouter);
 app.use('/owners', ownersRouter);
 app.use('/owners/:id', ownersRouter);
 app.use('/restaurants', restaurantsRouter);

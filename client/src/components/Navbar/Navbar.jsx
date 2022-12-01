@@ -1,15 +1,15 @@
 import React from 'react';
 import { useState, useContext } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import { MdOutlineRestaurantMenu } from 'react-icons/md'
-import images from '../../constants/images'
-import { Link } from 'react-router-dom'
+import { MdOutlineRestaurantMenu } from 'react-icons/md';
+import images from '../../constants/images';
+import { Link } from 'react-router-dom';
 import { UserContext } from '../../UserContext';
-import './Nav.css'
+import './Nav.css';
 
 const Navbar = () => {
 
-  const { user, setUser } = useContext(UserContext)
+  const { user, setUser } = useContext(UserContext);
 
   const [toggleMenu, setToggleMenu] = useState(false);
 
@@ -17,13 +17,13 @@ const Navbar = () => {
 
   function roleChange() {
     if (user === 'Guest') {
-      setUser('User')
+      setUser('User');
     }
     if (user === 'User') {
-      setUser('Owner')
+      setUser('Owner');
     }
     if (user === 'Owner') {
-      setUser('Guest')
+      setUser('Guest');
     }
   }
 
@@ -54,7 +54,7 @@ const Navbar = () => {
 
         <h1 className='p__opensans'><Link to={"/register"}> Register</Link></h1>
         <button className='button-85' onClick={roleChange}>Viewing as {user}</button>
-        
+
       </div>
 
       <div className='app__navbar-smallscreen'>
@@ -72,6 +72,6 @@ const Navbar = () => {
       </div>
     </nav>
   );
-}
+};
 
-export default Navbar
+export default Navbar;
