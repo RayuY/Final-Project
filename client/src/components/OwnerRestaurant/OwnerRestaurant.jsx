@@ -19,7 +19,7 @@ function OwnerRestaurant(props) {
       .catch((e) => console.error(`Error: ${e}`));
   }, []);
 
-  const restaurant = restaurantInfo.find((i) => i.user_id === userId);
+  const restaurant = restaurantInfo.find((i) => i.owner_id === userId);
 
   if (!restaurant) {
     return null;
