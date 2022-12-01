@@ -21,5 +21,5 @@ export {
   SubHeading,
   Newsletter,
   FooterOverlay,
-  Navbar
+  Navbar,
 };
