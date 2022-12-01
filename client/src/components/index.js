@@ -6,7 +6,7 @@ import ScrollButton from './ScrollButton/ScrollButton';
 import Homepage from './Homepage/Homepage';
 import AboutUs from './AboutUs/AboutUs';
 import Owner from './Owner/Owner';
-import User from './User/User'
+import User from './User/User';
 import Register from './Register/Register';
 import Login from './Login/Login';
 
@@ -21,7 +21,5 @@ export {
   SubHeading,
   Newsletter,
   FooterOverlay,
-  Navbar,
-  Login,
-  Register
+  Navbar
 };
