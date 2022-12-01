@@ -22,6 +22,4 @@ export {
   Newsletter,
   FooterOverlay,
   Navbar,
-  Login,
-  Register
 };
