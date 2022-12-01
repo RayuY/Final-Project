@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import "./OwnerReservation.css";
 
 function OwnerReservation(props) {
   const [reservation, setReservation] = useState([]);
@@ -43,22 +44,19 @@ function OwnerReservation(props) {
               {reservationItem === 2 ? (
                 <h3>1</h3>
               ) : (
-                <input type="table_value_2" placeholder="0" />
+                <h3>0</h3>
               )}
               {reservationItem === 4 ? (
                 <h3>1</h3>
               ) : (
-                <input type="table_value_2" placeholder="0" />
+                <h3>0</h3>
               )}
               {reservationItem === 6 ? (
                 <h3>1</h3>
               ) : (
-                <input type="table_value_2" placeholder="0" />
+                <h3>0</h3>
               )}
 
-              {/* <input type="table_value_2" placeholder="0" />
-              <input type="table_value_4" placeholder="0" />
-              <input type="table_value_6" placeholder="0" /> */}
             </div>
           </ul>
         </div>

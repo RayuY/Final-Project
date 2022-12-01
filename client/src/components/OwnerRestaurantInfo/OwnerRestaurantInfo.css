@@ -12,7 +12,7 @@
   border: solid;
   border-width: 5px;
   border-radius: 10px;
-  background: var(--color-black);
+  background: rgba(44, 40, 40, 0.69)
 }
 
 .owner_restaurant_info_container {
