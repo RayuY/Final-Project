@@ -5,6 +5,7 @@ CREATE TABLE restaurants (
   id SERIAL PRIMARY KEY,
   user_id integer REFERENCES users(id) ON DELETE CASCADE NOT NULL,
   title VARCHAR(255) NOT NULL,
+  address VARCHAR(255) NOT NULL,
   description TEXT,
   img TEXT,
   spot INT 

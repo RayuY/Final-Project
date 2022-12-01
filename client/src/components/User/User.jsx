@@ -1,16 +1,17 @@
 
 import React from 'react';
 
-import { images } from '../../constants'
+import { images } from '../../constants';
+import UserReservation from '../UserReservation/UserReservation';
 
 const Owner = () => {
-  
+
   return (
     <h1>
-      User yo!
+      <UserReservation />
     </h1>
-  )
+  );
 
-}
+};
 
 export default Owner;
