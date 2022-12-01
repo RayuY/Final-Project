@@ -40,7 +40,7 @@ const User = () => {
         <h3>Thank you,</h3>
         <h3>{user.name}</h3>
       </span>
-      <UserReservation />
+      {/* <UserReservation /> */}
     </div>
   );
 
