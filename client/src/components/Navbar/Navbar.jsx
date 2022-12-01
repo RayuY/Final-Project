@@ -41,7 +41,7 @@ const Navbar = () => {
       }
       {user === "Owner" &&
         <ul className="app__navbar-links">
-          <li className='p__opensans'><Link to={"/owner"}> Manage Restaurants</Link></li>
+          <li className='p__opensans'><Link to={"/owners/1"}> Manage Restaurants</Link></li>
         </ul>
       }
 
@@ -52,7 +52,7 @@ const Navbar = () => {
         <h1 className='p__opensans'><Link to={"/login"}> Login</Link></h1>
         <div></div>
 
-        <a href='#register' className='p__opensans'>Register</a>
+        <h1 className='p__opensans'><Link to={"/register"}> Register</Link></h1>
         <button className='button-85' onClick={roleChange}>Viewing as {user}</button>
         
       </div>

@@ -20,9 +20,6 @@ function App() {
       <UserContext.Provider value={role}>
         <Router>
           <Navbar />
-
-
-
           <Routes>
             <Route exact path="/" element={<Homepage />} />
             <Route exact path="/restaurants/:id" element={<Restaurant />} />
