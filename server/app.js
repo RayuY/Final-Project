@@ -6,9 +6,10 @@ const cors = require('cors');
 
 const indexRouter = require('./routes/index');
 const customersRouter = require('./routes/customers');
-const ownersRouter = require('./routes/owners');
 const restaurantsRouter = require('./routes/restaurants');
 const reservationsRouter = require('./routes/reservations');
+const ownersRouter = require('./routes/owners');
+const usersRouter = require('./routes/users')
 
 const app = express();
 
@@ -22,11 +23,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/customers', customersRouter);
 app.use('/customers/:id', customersRouter);
-app.use('/owners', ownersRouter);
-app.use('/owners/:id', ownersRouter);
 app.use('/restaurants', restaurantsRouter);
 app.use('/restaurants/:id', restaurantsRouter);
 app.use('/reservations', reservationsRouter);
 app.use('/reservations/:id', reservationsRouter);
+app.use('/owners', ownersRouter);
+app.use('/owners/:id', ownersRouter);
+app.use('/users', usersRouter);
+app.use('/users/:id', usersRouter);
 
 module.exports = app;
