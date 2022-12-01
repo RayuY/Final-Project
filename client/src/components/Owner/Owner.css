@@ -9,15 +9,42 @@
   height: 735px;
   color: var(--color-white);
 }
+.owner_page_top_split {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.owner_page_top {
+  flex-direction: column;
+  display: flex;
+  width: 88%;
+  align-items: center;
+  padding-left: 160px;
+}
 
 .owner_page_spoon {
   width: 10vw;
   display: flex;
   justify-content: space-between;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 .owner_page_spoon img {
-  color: var(--color-black)
+  color: var(--color-black);
+}
+
+.owner_page_add {
+  color: var(--color-white);
+  font-size: 20px;
+  width: 12%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.owner_page_add_new {
+  color: var(--color-white);
+  font-size: 15px;
 }
 
 .owner_bottom_links {
@@ -25,7 +52,7 @@
   height: 50vw;
   display: flex;
   justify-content: space-between;
-  align-items:flex-end;
+  align-items: flex-end;
 }
 
 .owner_bottom_links button {
