@@ -4,6 +4,8 @@ import "./Homepage.css";
 import { images } from "../../constants";
 import axios from "axios";
 import Slider from "react-slick";
+import { Link } from "react-router-dom";
+import SliceData from "./helper"; 
 
 import { UserContext } from '../../UserContext';
 
@@ -21,37 +23,9 @@ const Homepage = () => {
       .catch((e) => console.error(`Error: ${e}`));
   }, []);
 
-  // const displayRestaurants = restaurant.map((restaurant, index) => {
-  //   return (
-  //     <div className="restaurantContainer" key={index}>
-  //       <h1>{restaurant.title}</h1>
-  //       <img src={restaurant.img} alt="restaurant pic" />
-  //     </div>
-  //   );
-  // });
-
-
-  const displayRestaurants = restaurant.map((item, index) => {
-    return (
-      <div key={index} className='card'>
-        <div className="card-top">
-          <img className='img' src={item.img} alt='rest-img' />
-          <h1 className='p__opensans' >{item.title}</h1>
-          <p className="category"></p>
-        </div>
-        <div className="card-bottom">
-          <div>
-            <h3 className='p__opensans'>Price Range: $ $ $</h3>
-            <h3 className='p__opensans'>Reviews: ⭐⭐⭐</h3>
-          </div>
-          <div>
-            <button className='p__opensans' class="glow-on-hover" type="button">Reserve Now</button>
-          </div>
-        </div>
-      </div>
-
-    );
-  });
+  const row1 = SliceData(restaurant, 0, 10)
+  const row2 = SliceData(restaurant, 10, 20)
+  const row3 = SliceData(restaurant, 20, 28)
 
   if (restaurant.length === 0) {
     return null;
@@ -70,15 +44,15 @@ const Homepage = () => {
       <div className="restaurants">
         <h1 className='p__opensans'>By Price</h1>
         <Slider  {...settings}>
-          {displayRestaurants}
+          {row1}
         </Slider>
         <h1 className='p__opensans'>By Location</h1>
         <Slider  {...settings}>
-          {displayRestaurants}
+          {row2}
         </Slider>
         <h1 className='p__opensans'>By Cusine Type</h1>
         <Slider  {...settings}>
-          {displayRestaurants}
+          {row3}
         </Slider>
       </div>
     </div>

@@ -3,36 +3,18 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import "./UserRestaurantInfo.css";
 
-function UserRestaurantInfo(props) {
-  const [restaurantInfo, setRestaurantInfo] = useState([]);
-  const { id } = useParams();
-  const userId = Number(id);
-
-  useEffect(() => {
-    axios
-      .get(`http://localhost:8000/restaurants`)
-      .then((res) => {
-        setRestaurantInfo(res.data.restaurants[0]);
-      })
-      .catch((e) => console.error(`Error: ${e}`));
-  }, []);
-
-  // const restaurant = restaurantInfo.find((i) => i.user_id === userId);
-
-  // if (restaurant.length === 0) {
-  //   return null;
-  // }
+function UserRestaurantInfo( {restaurant }) {
 
   return (
     <div className="owner_restaurant_info_outer">
       <div className="owner_restaurant_info">
         <div className="owner_restaurant_info_container">
           <div className="owner_restaurant_info_title">
-            <h1>{restaurantInfo.title}</h1>
+            <h1>{restaurant.title}</h1>
           </div>
           <div className="owner_restaurant_info_description">
             <p>Description:</p>
-            <h3>{restaurantInfo.description}</h3>
+            <h3>{restaurant.description}</h3>
           </div>
           <div className="owner_restaurant_info_address">
             <p>Address:</p>
@@ -40,12 +22,12 @@ function UserRestaurantInfo(props) {
           </div>
         </div>
         <div>
-          <img className="owner_restaurant_info_image" src={restaurantInfo.img} />
+          <img className="owner_restaurant_info_image" src={restaurant.img} />
         </div>
       </div>
       <button
         className="custom__button"
-        onClick={() => props.setOwnerView("OwnerRestaurant")}
+        onClick={() => restaurant.setOwnerView("OwnerRestaurant")}
       >
         Reserve table !
       </button>
