@@ -25,7 +25,7 @@ const Homepage = () => {
 
   const row1 = SliceData(restaurant, 0, 10)
   const row2 = SliceData(restaurant, 10, 20)
-  const row3 = SliceData(restaurant, 20, 28)
+  const row3 = SliceData(restaurant, 20, 32)
 
   if (restaurant.length === 0) {
     return null;
