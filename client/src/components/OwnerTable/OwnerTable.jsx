@@ -1,11 +1,22 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { IdContext } from "../../IdContext";
+import axios from "axios";
 
 import "./OwnerTable.css";
 
 function OwnerTable(props) {
 
   const test = useContext(IdContext);
+
+  // const [tableNum, setTableNum] = useState;
+
+  function handleSubmit () {
+    const newSpot = { spot: 6 }
+    axios
+      .put("http://localhost:8000/restaurants/1", newSpot )
+      .then(res => console.log(res))
+      .catch((e) => console.error(`Error: ${e}`))
+  };
 
   return (
     <div className="owner_table">
@@ -35,7 +46,8 @@ function OwnerTable(props) {
       </div>
 
       <div className="button_list_tables">
-        <button className="custom__button" onClick={() => props.setOwnerView("OwnerReservation")} >List tables!</button>
+        {/* <button className="custom__button" onClick={() => props.setOwnerView("OwnerReservation")} >List tables!</button> */}
+        <button className="custom__button" onClick={handleSubmit} >List tables!</button>
       </div>
     </div>
   );

@@ -2,17 +2,6 @@ const express = require('express');
 const router = express.Router();
 const owners = require('../db/queries/owners');
 
-
-/* GET  owners listing. */
-router.get('/', (req, res) => {
-  owners.getAllOwners().then(data => {
-    console.log(data);
-    res.json({ owners: data });
-  });
-});
-
-
-
 /* GET  owner by Id. */
 router.get('/:id', (req, res) => {
   const id = req.params.id;
@@ -22,6 +11,15 @@ router.get('/:id', (req, res) => {
     res.json({ owners: data });
   });
 });
+
+/* GET  owners listing. */
+router.get('/', (req, res) => {
+  owners.getAllOwners().then(data => {
+    console.log(data);
+    res.json({ owners: data });
+  });
+});
+
 
 
 module.exports = router;

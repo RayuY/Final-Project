@@ -10,17 +10,17 @@ function OwnerReservation(props) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/reservations/${id}`)
+      .get(`http://localhost:8000/restaurants/${id}`)
       .then((res) => {
-        setReservation(res.data.reservations[0]);
+        setReservation(res.data.restaurants[0]);
         console.log("--------------");
-        console.log("res.data", res.data.reservations[0]);
+        console.log("res.data", res.data.restaurants[0]);
         console.log("--------------");
       })
       .catch((e) => console.error(`Error: ${e}`));
   }, []);
 
-  const reservationItem = reservation.party_size;
+  const reservationItem = reservation.spot;
 
   return (
     <div className="owner_table">
