@@ -18,7 +18,7 @@ function UserRestaurantInfo( {restaurant }) {
           </div>
           <div className="owner_restaurant_info_address">
             <p>Address:</p>
-            <h3>restaurants address here</h3>
+            <h3>{restaurant.address}</h3>
           </div>
         </div>
         <div>
