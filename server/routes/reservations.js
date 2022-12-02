@@ -2,23 +2,6 @@ const express = require("express");
 const router = express.Router();
 const reservations = require("../db/queries/reservations");
 
-/* GET  reservations listing. */
-router.get("/", (req, res) => {
-  reservations.getAllReservations().then((data) => {
-    console.log(data);
-    res.json({ reservations: data });
-  });
-});
-
-router.get("/:id", (req, res) => {
-  const id = req.params.id;
-  reservations.getReservationById(id).then((data) => {
-    console.log(data);
-    res.json({ reservations: data });
-  });
-});
-
-
 /* POST reservation listing. */
 router.post("/", (req, res) => {
   const reservation = req.body;                        // needed?
@@ -35,6 +18,22 @@ router.post("/", (req, res) => {
     res.redirect("/");
   });
 
+});
+
+/* GET  reservations listing. */
+router.get("/:id", (req, res) => {
+  const id = req.params.id;
+  reservations.getReservationById(id).then((data) => {
+    console.log(data);
+    res.json({ reservations: data });
+  });
+});
+
+router.get("/", (req, res) => {
+  reservations.getAllReservations().then((data) => {
+    console.log(data);
+    res.json({ reservations: data });
+  });
 });
 
 module.exports = router;

@@ -21,12 +21,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/users/:id', usersRouter);
 app.use('/owners', ownersRouter);
-app.use('/owners/:id', ownersRouter);
 app.use('/restaurants', restaurantsRouter);
-app.use('/restaurants/:id', restaurantsRouter);
 app.use('/reservations', reservationsRouter);
-app.use('/reservations/:id', reservationsRouter);
 
 module.exports = app;
