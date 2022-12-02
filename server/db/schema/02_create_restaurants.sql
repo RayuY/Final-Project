@@ -8,7 +8,7 @@ CREATE TABLE restaurants (
   address VARCHAR(255) NOT NULL,
   description TEXT,
   img TEXT,
-  spot2 INT,
-  spot4 INT,
-  spot6 INT 
+  spot2 INT DEFAULT 0,
+  spot4 INT DEFAULT 0,
+  spot6 INT DEFAULT 0
 );
