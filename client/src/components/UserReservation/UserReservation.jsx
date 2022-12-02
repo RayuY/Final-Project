@@ -13,7 +13,7 @@ function UserReservation(props) {
   const { id } = useParams();
   const userId = Number(id);
 
-
+  console.log("propsfromuserreservation:", props);
 
   useEffect(() => {
     axios
