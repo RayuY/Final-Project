@@ -78,16 +78,16 @@ const Owner = () => {
 
       <div className="owner_page_restaurant">
         {ownerView === "OwnerRestaurant" && (
-          <OwnerRestaurant setOwnerView={setOwnerView} />
+          <OwnerRestaurant setOwnerView={setOwnerView} id={id} />
         )}
         {ownerView === "OwnerRestaurantInfo" && (
           <OwnerRestaurantInfo setOwnerView={setOwnerView} id={id} />
         )}
         {ownerView === "OwnerTable" && (
-          <OwnerTable setOwnerView={setOwnerView} />
+          <OwnerTable setOwnerView={setOwnerView} id={id} />
         )}
         {ownerView === "OwnerReservation" && (
-          <OwnerReservation setOwnerView={setOwnerView} />
+          <OwnerReservation setOwnerView={setOwnerView} id={id} />
         )}
       </div>
 

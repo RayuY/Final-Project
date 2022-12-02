@@ -6,12 +6,10 @@ const restaurants = require('../db/queries/restaurants');
 router.put("/:id", (req, res) => {
   const id = req.params.id;
   const body = req.body;
-  const spot = body.spot
-  console.log("id:", id);
-  console.log("body:", body);
-  console.log("spot:", spot);
-  restaurants.addTableListing(spot, id).then((data) => {
-    console.log("data", data);
+  const spot2 = body.spot2;
+  const spot4 = body.spot4;
+  const spot6 = body.spot6;
+  restaurants.addTableListing(spot2, spot4, spot6, id).then((data) => {
     return res.send("OK");
   });
 });
