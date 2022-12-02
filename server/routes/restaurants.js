@@ -14,6 +14,19 @@ router.put("/:id", (req, res) => {
   });
 });
 
+router.post("/", (req, res) => {
+  const body = req.body;
+  console.log("body:", body);
+  const id = body.id;
+  const title = body.title;
+  const description = body.description;
+  const address = body.address;
+  const image = body.image;
+  restaurants.addNewRestaurant(id, title, description, address, image).then((data) => {
+    return res.send("OK");
+  });
+});
+
 /* GET  restaurants listing. */
 router.get('/:id', (req, res) => {
   const id = req.params.id;

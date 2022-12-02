@@ -13,8 +13,8 @@ const getRestaurantById = id => {
   });
 };
 
-const addNewRestaurant = (reservation, userId) => {
-  return db.query(`INSERT INTO restaurants (user_id, restaurant_id, party_size) VALUES($1, $2, $3)`, [userId, reservation.restaurant_id, reservation.party_size])
+const addNewRestaurant = (ownerId, title, description, address, image) => {
+  return db.query(`INSERT INTO restaurants (owner_id, title, address, description, img, spot2, spot4, spot6) VALUES ($1, $2, $3, $4, $5, 0, 0, 0)`, [ownerId, title, description, address, image])
 }
 
 const addTableListing = (spot2, spot4, spot6, ownerId) => {

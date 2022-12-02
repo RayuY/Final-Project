@@ -5,19 +5,31 @@ import './OwnerNew.css'
 
 function OwnerNew(props) {
 
-
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [address, setAddress] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
   const [image, setImage] = useState("");
+  const id = props.id
   
+  // const handleSubmit = async() => {
+  //   const newRestaurant = { title, description, address, image }
+  //   console.log("newRest:", newRestaurant)
 
+  //   try {
+  //     const response = await axios({
+
+  //       .post(`http://localhost:8000/restaurants`, newRestaurant)
+  //       .then((res) => props.setOwnerView("OwnerRestaurant"))
+  //     })
+  //   }
+  //     .catch(e) {
+  //       console.error(`Error: ${e}`)
+  //     } 
+  // }
 
   function handleSubmit() {
-    const newRestaurant = { title, description, address, phone, email, image }
-
+    const newRestaurant = { id, title, description, address, image }
+    console.log("newRest:", newRestaurant)
     axios
       .post(`http://localhost:8000/restaurants`, newRestaurant)
       .then((res) => props.setOwnerView("OwnerRestaurant"))
@@ -40,10 +52,6 @@ function OwnerNew(props) {
             <input type="table_value_2" value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Description" className="owner_new_description" />
             <h3>Address</h3>
             <input type="table_value_2" value={address} onChange={(e) => setAddress(e.target.value)} placeholder="Address" />
-            <h3>Phone</h3>
-                <input type="table_value_2" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Phone" />
-            <h3>Email</h3>
-                <input type="table_value_4" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
             <h3>Image</h3>
                 <input type="table_value_6" value={image} onChange={(e) => setImage(e.target.value)} placeholder="URL" />
               </form>
