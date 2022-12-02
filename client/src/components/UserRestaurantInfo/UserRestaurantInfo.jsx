@@ -19,6 +19,9 @@ function UserRestaurantInfo( {restaurant }) {
           <div className="owner_restaurant_info_address">
             <p>Address:</p>
             <h3>{restaurant.address}</h3>
+            <h4>Table for 2: {restaurant.spot2}</h4>
+            <h4>Table for 4: {restaurant.spot4}</h4>
+            <h4>Table for 6: {restaurant.spot6}</h4>
           </div>
         </div>
         <div>
