@@ -25,7 +25,6 @@ function UserReservation({ userObj }) {
         setRestaurantInfo(all[1].data.restaurants);
         setUserInfo(all[2].data);
       })
-      .then(()=> {console.log("test")})
       .catch((e) => console.error(`Error: ${e}`));
   }, []);
 

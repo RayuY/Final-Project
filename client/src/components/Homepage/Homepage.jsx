@@ -1,10 +1,8 @@
 
 import React, { useState, useEffect, useRef, useContext } from "react";
 import "./Homepage.css";
-import { images } from "../../constants";
 import axios from "axios";
 import Slider from "react-slick";
-import { Link } from "react-router-dom";
 import Row from "./Row"; 
 
 import { UserContext } from '../../UserContext';

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { useState, useContext } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdOutlineRestaurantMenu } from 'react-icons/md';
@@ -13,16 +13,27 @@ const Navbar = () => {
 
   const [toggleMenu, setToggleMenu] = useState(false);
 
-
+  let person = {
+    'User 1': "Matt",
+    'User 2': "Aldwin",
+    'Owner 1': "Ray",
+    'Owner 2': "Gary"
+  }
 
   function roleChange() {
     if (user === 'Guest') {
-      setUser('User');
+      setUser('User 1');
     }
-    if (user === 'User') {
-      setUser('Owner');
+    if (user === 'User 1') {
+      setUser('User 2');
     }
-    if (user === 'Owner') {
+    if (user === 'User 2') {
+      setUser('Owner 1');
+    }
+    if (user === 'Owner 1') {
+      setUser('Owner 2');
+    }
+    if (user === 'Owner 2') {
       setUser('Guest');
     }
   }
@@ -34,26 +45,48 @@ const Navbar = () => {
           <img src={images.tablebae} alt="app logo" />
         </Link>
       </div>
-      {user === "User" &&
+
+      {user === "Guest" &&
+        <ul className="app__navbar-links">
+          <li className='p__opensans'>Welcome Table Bae</li>
+        </ul>
+      }
+      {user === "User 1" &&
         <ul className="app__navbar-links">
           <li className='p__opensans'><Link to={"/reservations/1"}> Your Reservations</Link></li>
         </ul>
       }
-      {user === "Owner" &&
+      {user === "User 2" &&
         <ul className="app__navbar-links">
-          <li className='p__opensans'><Link to={"/owners/1"}> Manage Restaurants</Link></li>
+          <li className='p__opensans'><Link to={"/reservations/2"}> Your Reservations</Link></li>
         </ul>
       }
-
-
+      {user === "Owner 1" &&
+        <div className="app__navbar-links">
+          <li className='p__opensans'><Link to={"/owners/1"}> Manage Restaurants</Link></li>
+        </div>
+      }
+      {user === "Owner 2" &&
+        <div className="app__navbar-links">
+          <li className='p__opensans'><Link to={"/owners/5"}> Manage Restaurants</Link></li>
+        </div>
+      }
 
       <div className='app__navbar-login'>
-        {/* <a href="#login" className='p__opensans'>Login</a> */}
-        <h1 className='p__opensans'><Link to={"/login"}> Login</Link></h1>
-        <div></div>
-
-        <h1 className='p__opensans'><Link to={"/register"}> Register</Link></h1>
-        <button className='button-85' onClick={roleChange}>Viewing as {user}</button>
+        {user === 'Guest' ?
+          <Fragment>
+            <h1 className='p__opensans'><Link to={"/login"}>Login</Link></h1>
+            <div></div>
+            <h1 className='p__opensans'><Link to={"/register"}>Register</Link></h1>
+            <Link to={"/"}>
+              <button className='button-85' onClick={roleChange}>Viewing as {user}</button></Link>
+          </Fragment>
+          :
+          <Fragment>
+            <h1 className='p__opensans'>Welcome Back <em>{person[user]}</em></h1>
+            <Link to={"/"}>
+              <button className='button-85' onClick={roleChange}>Viewing as {user}</button></Link>
+          </Fragment>}
 
       </div>
 

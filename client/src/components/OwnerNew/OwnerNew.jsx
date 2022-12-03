@@ -29,7 +29,6 @@ function OwnerNew(props) {
 
   function handleSubmit() {
     const newRestaurant = { id, title, description, address, image }
-    console.log("newRest:", newRestaurant)
     axios
       .post(`http://localhost:8000/restaurants`, newRestaurant)
       .then((res) => props.setOwnerView("OwnerRestaurant"))
