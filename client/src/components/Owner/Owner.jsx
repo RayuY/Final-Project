@@ -14,6 +14,7 @@ import OwnerRestaurant from "../OwnerRestaurant/OwnerRestaurant";
 import OwnerRestaurantInfo from "../OwnerRestaurantInfo/OwnerRestaurantInfo";
 import OwnerTable from "../OwnerTable/OwnerTable";
 import OwnerReservation from "../OwnerReservation/OwnerReservation";
+import OwnerNew from "../OwnerNew/OwnerNew";
 import { IoMdAddCircle } from "react-icons/io";
 
 const Owner = () => {
@@ -71,23 +72,26 @@ const Owner = () => {
           </div>
         </div>
         <div className="owner_page_add">
-          <IoMdAddCircle className="owner_page_add_circle" onClick={() => setOwnerView("OwnerRestaurant")} />
+          <IoMdAddCircle className="owner_page_add_circle" onClick={() => setOwnerView("OwnerNew")} />
           <p className="owner_page_add_new">Add new restaurant</p>
         </div>
       </div>
 
       <div className="owner_page_restaurant">
         {ownerView === "OwnerRestaurant" && (
-          <OwnerRestaurant setOwnerView={setOwnerView} />
+          <OwnerRestaurant setOwnerView={setOwnerView} id={id} />
         )}
         {ownerView === "OwnerRestaurantInfo" && (
           <OwnerRestaurantInfo setOwnerView={setOwnerView} id={id} />
         )}
         {ownerView === "OwnerTable" && (
-          <OwnerTable setOwnerView={setOwnerView} />
+          <OwnerTable setOwnerView={setOwnerView} id={id} />
         )}
         {ownerView === "OwnerReservation" && (
-          <OwnerReservation setOwnerView={setOwnerView} />
+          <OwnerReservation setOwnerView={setOwnerView} id={id} />
+        )}
+        {ownerView === "OwnerNew" && (
+          <OwnerNew setOwnerView={setOwnerView} id={id} />
         )}
       </div>
 

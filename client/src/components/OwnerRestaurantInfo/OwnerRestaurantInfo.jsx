@@ -36,7 +36,7 @@ function OwnerRestaurantInfo(props) {
           </div>
           <div className="owner_restaurant_info_address">
             <p>Address:</p>
-            <h3>restaurants address here</h3>
+            <h3>{restaurant.address}</h3>
           </div>
         </div>
         <div>
@@ -45,7 +45,7 @@ function OwnerRestaurantInfo(props) {
       </div>
       <button
         className="custom__button"
-        onClick={() => props.setOwnerView("OwnerRestaurant")}
+        onClick={() => props.setOwnerView("OwnerNew")}
       >
         Edit Info
       </button>

@@ -7,11 +7,13 @@ import { images } from "../../constants";
 import UserReservation from "../UserReservation/UserReservation";
 import UserRestaurantInfo from "../UserRestaurantInfo/UserRestaurantInfo";
 
-const User = () => {
+const User = (props) => {
   const [userInfo, setUserInfo] = useState([]);
   const { id } = useParams();
   const userId = Number(id);
 
+  console.log("propsfromuser:", props);
+  
   useEffect(() => {
     axios
       .get("http://localhost:8000/users")

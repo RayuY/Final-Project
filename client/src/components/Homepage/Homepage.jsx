@@ -5,7 +5,7 @@ import { images } from "../../constants";
 import axios from "axios";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
-import SliceData from "./helper"; 
+import Row from "./Row"; 
 
 import { UserContext } from '../../UserContext';
 
@@ -23,9 +23,9 @@ const Homepage = () => {
       .catch((e) => console.error(`Error: ${e}`));
   }, []);
 
-  const row1 = SliceData(restaurant, 0, 10)
-  const row2 = SliceData(restaurant, 10, 20)
-  const row3 = SliceData(restaurant, 20, 32)
+  const row1 = Row(restaurant, 0, 10)
+  const row2 = Row(restaurant, 10, 20)
+  const row3 = Row(restaurant, 20, 28)
 
   if (restaurant.length === 0) {
     return null;
