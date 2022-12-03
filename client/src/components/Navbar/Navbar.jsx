@@ -34,26 +34,31 @@ const Navbar = () => {
           <img src={images.tablebae} alt="app logo" />
         </Link>
       </div>
+      {user === "Guest" &&
+        <ul className="app__navbar-links">
+          <li className='p__opensans'>Welcome Table Bae</li>
+        </ul>
+      }
       {user === "User" &&
         <ul className="app__navbar-links">
-          <li className='p__opensans'><Link to={"/reservations"}> Your Reservations</Link></li>
+          <h3></h3>
+          <li className='p__opensans'><Link to={"/reservations/1"}> Your Reservations</Link></li>
         </ul>
       }
       {user === "Owner" &&
-        <ul className="app__navbar-links">
+        <div className="app__navbar-links">
           <li className='p__opensans'><Link to={"/owners/1"}> Manage Restaurants</Link></li>
-        </ul>
+        </div>
       }
-
-
-
       <div className='app__navbar-login'>
         {/* <a href="#login" className='p__opensans'>Login</a> */}
         <h1 className='p__opensans'><Link to={"/login"}> Login</Link></h1>
         <div></div>
 
         <h1 className='p__opensans'><Link to={"/register"}> Register</Link></h1>
+        <Link to={"/"}>
         <button className='button-85' onClick={roleChange}>Viewing as {user}</button>
+        </Link>
 
       </div>
 
