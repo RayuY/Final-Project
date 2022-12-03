@@ -41,7 +41,6 @@ const Navbar = () => {
       }
       {user === "User" &&
         <ul className="app__navbar-links">
-          <h3></h3>
           <li className='p__opensans'><Link to={"/reservations/1"}> Your Reservations</Link></li>
         </ul>
       }
