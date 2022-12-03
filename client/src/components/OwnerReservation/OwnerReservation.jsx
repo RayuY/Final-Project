@@ -1,26 +1,26 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
 import "./OwnerReservation.css";
 
 function OwnerReservation(props) {
   const [reservation, setReservation] = useState([]);
-  const { id } = useParams();
+  const id = Number(props.id);
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/restaurants/${id}`)
+      .get(`http://localhost:8000/restaurants`)
       .then((res) => {
-        setReservation(res.data.restaurants[0]);
-        console.log("--------------");
-        console.log("res.data", res.data.restaurants[0]);
-        console.log("--------------");
+        setReservation(res.data.restaurants);
       })
       .catch((e) => console.error(`Error: ${e}`));
   }, []);
 
-  const reservationItem = reservation.spot;
+  const spotReservation = reservation.find((i) =>i.owner_id === id)
+
+  if (!spotReservation) {
+    return null;
+  }
 
   return (
     <div className="owner_table">
@@ -41,22 +41,9 @@ function OwnerReservation(props) {
           <ul>
             <h3>Number of Tables</h3>
             <div className="num_of_tables">
-              {reservationItem === 2 ? (
-                <h3>1</h3>
-              ) : (
-                <h3>0</h3>
-              )}
-              {reservationItem === 4 ? (
-                <h3>1</h3>
-              ) : (
-                <h3>0</h3>
-              )}
-              {reservationItem === 6 ? (
-                <h3>1</h3>
-              ) : (
-                <h3>0</h3>
-              )}
-
+              <h3>{spotReservation.spot2}</h3>
+              <h3>{spotReservation.spot4}</h3>
+              <h3>{spotReservation.spot6}</h3>
             </div>
           </ul>
         </div>

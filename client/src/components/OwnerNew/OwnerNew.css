@@ -1,0 +1,21 @@
+
+.owner_new_info{
+  width: 600px;
+  display: flex;
+  justify-content: center;
+  padding: 10px 20px 10px 5px;
+}
+
+.owner_new_container {
+  width: 63%;
+}
+.owner_new_input {
+  padding: 1.5rem;
+}
+.owner_new_input input{
+  width: 20rem;
+  height: 23px;
+  background: rgb(122, 122, 122);
+  color: rgb(255, 255, 255);
+}
+
