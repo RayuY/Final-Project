@@ -2,7 +2,7 @@
 const db = require('../../configs/db.config');
 
 const getAllOwners = () => {
-  return db.query("SELECT * FROM owners;").then(data => {
+  return db.query("SELECT * FROM owners ORDER BY id;").then(data => {
     return data.rows;
   });
 };

@@ -15,6 +15,7 @@ import OwnerRestaurantInfo from "../OwnerRestaurantInfo/OwnerRestaurantInfo";
 import OwnerTable from "../OwnerTable/OwnerTable";
 import OwnerReservation from "../OwnerReservation/OwnerReservation";
 import OwnerNew from "../OwnerNew/OwnerNew";
+import OwnerEdit from "../OwnerEdit/OwnerEdit"
 import { IoMdAddCircle } from "react-icons/io";
 
 const Owner = () => {
@@ -93,6 +94,9 @@ const Owner = () => {
         {ownerView === "OwnerNew" && (
           <OwnerNew setOwnerView={setOwnerView} id={id} />
         )}
+        {ownerView === "OwnerEdit" && (
+          <OwnerEdit setOwnerView={setOwnerView} id={id} />
+        )}
       </div>
 
       <div className="owner_bottom_links">
@@ -106,7 +110,7 @@ const Owner = () => {
           className="custom__button"
           onClick={() => setOwnerView("OwnerRestaurant")}
         >
-          Back to main page
+          My restaurants
         </button>
       </div>
     </div>

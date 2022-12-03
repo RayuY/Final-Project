@@ -47,8 +47,7 @@ const Restaurant = () => {
       </div>
 
       <div className="owner_page_restaurant">
-        {/* <UserReservation /> */}
-        <UserRestaurantInfo restaurant={restaurant}/>
+        <UserRestaurantInfo restaurant={ restaurant }/>
       </div>
 
       <div className="owner_bottom_links">
