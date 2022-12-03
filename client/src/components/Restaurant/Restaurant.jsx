@@ -9,7 +9,6 @@ import UserRestaurantInfo from "../UserRestaurantInfo/UserRestaurantInfo";
 const Restaurant = () => {
   const [restaurant, setRestaurant] = useState([]);
   const { id } = useParams();
-  console.log("idinsideRestaurnat:", id);
   useEffect(() => {
     axios
       .get("http://localhost:8000/restaurants")
@@ -20,12 +19,10 @@ const Restaurant = () => {
   }, []);
 
 
-  console.log(restaurant)
   if (restaurant.length === 0) {
     return null;
   }
 
-  console.log("rID:", restaurant.id)
   return (
     <div className="owner_page">
       <div className="owner_page_top_split">
@@ -49,8 +46,7 @@ const Restaurant = () => {
       </div>
 
       <div className="owner_page_restaurant">
-        {/* <UserReservation /> */}
-        <UserRestaurantInfo restaurant={restaurant}/>
+        <UserRestaurantInfo restaurant={ restaurant }/>
       </div>
 
       <div className="owner_bottom_links">

@@ -3,7 +3,26 @@ import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import "./UserRestaurantInfo.css";
 
-function UserRestaurantInfo( {restaurant }) {
+function UserRestaurantInfo({ restaurant }) {
+
+  const user = {
+    id: 3
+  }
+
+  const userId = user.id;
+  const restaurantId = restaurant.id;
+  const partySize = 2;
+
+  console.log("newReservation:", userId, restaurantId, partySize);
+
+  function handleSubmit() {
+    const newReservation = { userId, restaurantId, partySize }
+    console.log("newRest:", newReservation)
+    axios
+      .post(`http://localhost:8000/reservations`, newReservation)
+      // .then((res) => props.setOwnerView("UserReservation"))
+      .catch((e) => console.error(`Error: ${e}`));
+  }
 
   return (
     <div className="owner_restaurant_info_outer">
@@ -31,7 +50,7 @@ function UserRestaurantInfo( {restaurant }) {
       <Link to={"/reservations/1"}>
       <button
         className="custom__button"
-        // onClick={() => restaurant.setOwnerView("OwnerRestaurant")}
+        onClick={handleSubmit}
       >
         Reserve table !
       </button>

@@ -14,8 +14,8 @@ const getReservationById = id => {
   });
 };
 
-const addReservation = (reservation, userId) => {
-  return db.query(`INSERT INTO reservations (user_id, restaurant_id, party_size) VALUES($1, $2, $3)`, [userId, reservation.restaurant_id, reservation.party_size])
+const addReservation = (userId, restaurantId, partySize) => {
+  return db.query(`INSERT INTO reservations (user_id, restaurant_id, party_size) VALUES($1, $2, $3)`, [userId, restaurantId, partySize])
 }
 
 
