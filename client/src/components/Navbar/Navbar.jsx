@@ -36,7 +36,7 @@ const Navbar = () => {
       </div>
       {user === "User" &&
         <ul className="app__navbar-links">
-          <li className='p__opensans'><Link to={"/reservations"}> Your Reservations</Link></li>
+          <li className='p__opensans'><Link to={"/reservations/1"}> Your Reservations</Link></li>
         </ul>
       }
       {user === "Owner" &&
