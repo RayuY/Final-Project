@@ -3,7 +3,7 @@
 const db = require('../../configs/db.config');
 
 const getAllReservations = () => {
-  return db.query("SELECT * FROM reservations;").then(data => {
+  return db.query("SELECT * FROM reservations ORDER BY id;").then(data => {
     return data.rows;
   });
 };
