@@ -102,3 +102,8 @@
       width: 80%;
   }
 }
+
+.aboutus{
+  display: flex;
+  justify-content: center;
+}

@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./User.css";
-import { images } from "../../constants";
 import UserReservation from "../UserReservation/UserReservation";
 
 const User = ({ userObj }) => {
@@ -16,7 +15,6 @@ const User = ({ userObj }) => {
       .get("http://localhost:8000/users")
       .then((res) => {
         setUserInfo(res.data.users);
-        console.log(res.data.users);
       })
       .catch((e) => console.error(`Error: ${e}`));
   }, []);
