@@ -15,7 +15,7 @@ function App() {
   const role = useMemo(() => ({ user, setUser }), [user, setUser]);
 
   const userObj = {
-    id: 1,
+    id: 2,
     name: 'Matt Wilson',
     phone: '778'
   }
@@ -34,7 +34,7 @@ function App() {
             <Route exact path="/about" element={<AboutUs userObj={userObj} />} />
             <Route exact path="/login" element={<Login userObj={userObj} />} />
             <Route exact path="/register" element={<Register userObj={userObj} />} />
-            <Route exact path="/reservations/:id" element={<OwnerReservation userObj={userObj} />} />
+            <Route exact path="/reservations/:id" element={<User userObj={userObj} />} />
           </Routes>
 
           <Footer />

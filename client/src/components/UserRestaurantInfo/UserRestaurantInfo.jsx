@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./UserRestaurantInfo.css";
 
 function UserRestaurantInfo( {restaurant }) {
@@ -28,12 +28,14 @@ function UserRestaurantInfo( {restaurant }) {
           <img className="owner_restaurant_info_image" src={restaurant.img} />
         </div>
       </div>
+      <Link to={"/reservations/1"}>
       <button
         className="custom__button"
-        onClick={() => restaurant.setOwnerView("OwnerRestaurant")}
+        // onClick={() => restaurant.setOwnerView("OwnerRestaurant")}
       >
         Reserve table !
       </button>
+      </Link>
     </div>
   );
 }
