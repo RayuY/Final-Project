@@ -5,15 +5,12 @@ import { useParams, Link } from "react-router-dom";
 import "./User.css";
 import { images } from "../../constants";
 import UserReservation from "../UserReservation/UserReservation";
-import UserRestaurantInfo from "../UserRestaurantInfo/UserRestaurantInfo";
 
-const User = (props) => {
+const User = ({ userObj }) => {
   const [userInfo, setUserInfo] = useState([]);
   const { id } = useParams();
   const userId = Number(id);
 
-  console.log("propsfromuser:", props);
-  
   useEffect(() => {
     axios
       .get("http://localhost:8000/users")
@@ -30,42 +27,20 @@ const User = (props) => {
     return null;
   }
 
-  console.log(user);
-
   return (
     <div className="owner_page">
       <div className="owner_page_top_split">
         <div className="owner_page_top">
-          <h3>Welcome </h3>
-          <h1>{user.name}</h1>
           <div className="owner_page_spoon">
-            <img
-              src={images.spoon}
-              className="spoon__img"
-              style={{ marginTop: 15, transform: "rotate(180deg)" }}
-            />
-            <img
-              src={images.spoon}
-              className="spoon__img"
-              style={{ marginTop: 15 }}
-            />
           </div>
         </div>
         <div className="owner_page_add"></div>
       </div>
 
       <div className="owner_page_restaurant">
-        {/* <UserReservation /> */}
-        <UserRestaurantInfo />
+        <UserReservation userObj={userObj} />
       </div>
 
-      <div className="owner_bottom_links">
-        <button className="custom__button">View reservation</button>
-
-        <Link to={"/"}>
-          <button className="custom__button">Back to main page</button>
-        </Link>
-      </div>
     </div>
   );
 };
