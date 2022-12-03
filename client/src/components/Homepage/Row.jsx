@@ -1,20 +1,12 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 export default function Row(arrData, start, end) {
 
   let arr = [];
-  let navigate = useNavigate(); 
-
-
-  console.log("arrData:", arrData);
   return (
   arrData.slice(start, end).map((item, index) => {
-    const routeChange = () =>{ 
-      console.log("itemId:", item.id)
-      let path = `/restaurants/${item.id}`; 
-      navigate(path);
-    }
+
     return (
        <div key={index} className='card'>
         <Link to={`/restaurants/${item.id}`}>

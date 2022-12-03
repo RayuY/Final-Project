@@ -22,8 +22,8 @@ const Footer = () => (
 
       <div className="app__footer-links_logo">
         <img src={images.tablebae} alt="footer_logo" />
-        <p className="p__opensans">&quot;Never wait for tables again.&quot;</p>
-        <img src={images.spoon} className="spoon__img" style={{ marginTop: 15 }} />
+        <p className="p__opensans">&quot;Never wait for tables again&quot;</p>
+        <img src={images.spoon} alt="footer_logo" className="spoon__img" style={{ marginTop: 15 }} />
         <div className="app__footer-links_icons">
           <FiFacebook />
           <FiTwitter />
@@ -39,9 +39,9 @@ const Footer = () => (
     </div>
 
     <div className="footer__copyright">
-      <ul className='app__navbar-links'>
-        <li className='p__opensans '><Link to={"/about"}>About Us</Link></li>
-      </ul>
+      <div className='aboutus'>
+        <span className='p__opensans '><Link to={"/about"}>About Us</Link></span>
+      </div>
         <p className="p__opensans">2022 Table Bae. All Rights reserved.</p>
     </div>
 
