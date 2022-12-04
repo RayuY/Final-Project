@@ -18,6 +18,7 @@
 .owner_restaurant_info_container {
   display: flex;
   flex-direction: column;
+  width: 63%;
 }
 
 .owner_restaurant_info_title {
