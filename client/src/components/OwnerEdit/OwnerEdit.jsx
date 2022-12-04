@@ -33,8 +33,8 @@ function OwnerEdit(props) {
     const newRestaurant = { id, title, description, address, image };
     console.log("newRest:", newRestaurant);
     axios
-      .put(`http://localhost:8000/restaurants/${restaurant.id}`, newRestaurant)
-      .then((res) => props.setOwnerView("OwnerRestaurant"))
+      .put(`http://localhost:8000/restaurants/${restaurant.id}/edit`, newRestaurant)
+      .then((res) => props.setOwnerView("OwnerRestaurantInfo"))
       .catch((e) => console.error(`Error: ${e}`));
   }
 
