@@ -1,12 +1,12 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import "./UserReservation.css";
 import { images } from "../../constants";
 import User from "../User/User";
 
-function UserReservation({ userObj }) {
+function UserReservation({ userObj }, props) {
   const [reservationInfo, setReservationInfo] = useState([]);
   const [restaurantInfo, setRestaurantInfo] = useState([]);
   const [userInfo, setUserInfo] = useState([]);
@@ -28,6 +28,18 @@ function UserReservation({ userObj }) {
 
       .catch((e) => console.error(`Error: ${e}`));
   }, []);
+
+  function deleteReservation() {
+    axios
+      .delete(`http://localhost:8000/reservations/${resId}`)
+      .then((res) => props.setOwnerView("OwnerRestaurant"))
+      .catch((e) => console.error(`Error: ${e}`));
+  }
+
+
+
+
+
 
   if (reservationInfo.length === 0) {
     return null;
@@ -75,11 +87,13 @@ function UserReservation({ userObj }) {
         <img className="restaurantimg" src={restaurantImg} />
         <h1 className="res_name">{restaurantName}</h1>
         <h3>{restaurantAddress}</h3>
-        <h3 className="res_phone">250-669-6969</h3>
+        <h3 className="res_phone">{restaurantPhone}</h3>
       </div>
       <div className="res_bottom_links">
-        <button className="custom__button">Home Page</button>
-        <button className="custom__button">Cancel Reservation</button>
+        <Link to={"/"}>
+          <button className="custom__button">Home Page</button>
+        </Link >
+        <button className="custom__button" onClick={deleteReservation}>Cancel Reservation</button>
       </div>
     </div>
   );
