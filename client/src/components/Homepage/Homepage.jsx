@@ -23,7 +23,7 @@ const Homepage = () => {
 
   const row1 = Row(restaurant, 0, 10)
   const row2 = Row(restaurant, 10, 20)
-  const row3 = Row(restaurant, 20, 28)
+  const row3 = Row(restaurant, 20, 35)
 
   if (restaurant.length === 0) {
     return null;
