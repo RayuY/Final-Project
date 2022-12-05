@@ -2,10 +2,13 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import "./UserRestaurantInfo.css";
-import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 
+import Modal from "./Modal";
+
 function UserRestaurantInfo({ restaurant }) {
+
+  const [modalOpen, setModalOpen] = useState(false);
   const [reservation, setReservation] = useState([]);
 
   const user = {
@@ -42,6 +45,7 @@ function UserRestaurantInfo({ restaurant }) {
   let review = '⭐'
   let noReview = 'No reviews yet.'
 
+
   return (
 
     <div className="owner_restaurant_info_outer">
@@ -66,9 +70,25 @@ function UserRestaurantInfo({ restaurant }) {
             <h4>Table avaliable for party of 6 : {restaurant.spot6}</h4>
           </div>
         </div>
-        <div>
-          <img className="owner_restaurant_info_image" src={restaurant.img} />
+
+        <div className="App">
+          <h1>Hey, click on the button to open the modal.</h1>
+          <button
+            className="openModalBtn"
+            onClick={() => {
+              setModalOpen(true);
+            }}
+          >
+            <img className="owner_restaurant_info_image" src={restaurant.img} />
+          </button>
+
+          {modalOpen && <Modal setOpenModal={setModalOpen} />}
         </div>
+        <div>
+          
+        </div>
+
+
       </div>
       <Link to={`/reservations/${spotReservation}`}>
         <button
