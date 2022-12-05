@@ -70,13 +70,14 @@ function UserRestaurantInfo({ restaurant }) {
           <img className="owner_restaurant_info_image" src={restaurant.img} />
         </div>
       </div>
-      <Link to={`/reservations/${spotReservation}`}>
-        <button
-          className="custom__button"
-          onClick={handleSubmit}
-        >
-          Reserve table !
-        </button>
+      <Link to={`/reservations/${spotReservation + 1}`}>
+      <button
+        className="custom__button"
+        onClick={handleSubmit}
+      >
+        Reserve table !
+      </button>
+
       </Link>
     </div >
   );

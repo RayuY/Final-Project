@@ -22,4 +22,9 @@ const addTableListing = (spot2, spot4, spot6, ownerId) => {
   return db.query(`UPDATE restaurants SET spot2 = $1, spot4 = $2, spot6 = $3 WHERE id = $4 RETURNING *`, [spot2, spot4, spot6, id])
 }
 
-module.exports = { getAllRestaurants, getRestaurantById, addNewRestaurant, addTableListing };
+const editRestaurant = (ownerId, title, description, address, image) => {
+  return db.query(`UPDATE restaurants SET title = $2, description = $3, address = $4, img = $5 WHERE id = $1 RETURNING *`, [ownerId, title, description, address, image])
+}
+
+
+module.exports = { getAllRestaurants, getRestaurantById, addNewRestaurant, addTableListing, editRestaurant };

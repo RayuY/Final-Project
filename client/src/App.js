@@ -14,12 +14,6 @@ function App() {
   const [user, setUser] = useState('Guest');
   const role = useMemo(() => ({ user, setUser }), [user, setUser]);
 
-  const userObj = {
-    id: 2,
-    name: 'Matt Wilson',
-    phone: '778'
-  }
-
   return (
     <div>
 
@@ -27,14 +21,13 @@ function App() {
         <Router>
           <Navbar />
           <Routes>
-            <Route exact path="/" element={<Homepage userObj={userObj} />} />
-            <Route exact path="/restaurants/:id" element={<Restaurant userObj={userObj} />} />
-            <Route exact path="/owners/:id" element={<Owner userObj={userObj} />} />
-            {/* <Route exact path="/users/:id" element={<User />} /> */}
-            <Route exact path="/about" element={<AboutUs userObj={userObj} />} />
-            <Route exact path="/login" element={<Login userObj={userObj} />} />
-            <Route exact path="/register" element={<Register userObj={userObj} />} />
-            <Route exact path="/reservations/:id" element={<User userObj={userObj} />} />
+            <Route exact path="/" element={<Homepage />} />
+            <Route exact path="/restaurants/:id" element={<Restaurant />} />
+            <Route exact path="/owners/:id" element={<Owner />} />
+            <Route exact path="/about" element={<AboutUs />} />
+            <Route exact path="/login" element={<Login />} />
+            <Route exact path="/register" element={<Register />} />
+            <Route exact path="/reservations/:id" element={<User />} />
           </Routes>
 
           <Footer />
