@@ -9,20 +9,22 @@ const AboutUs = () => (
     </div>
 
     <div className="app__aboutus-content flex__center">
-      <div className="app__aboutus-content_about">
-        <h1 className="headtext__cormorant">About Us</h1>
-        <img src={images.spoon} alt="about_spoon" className="spoon__img" />
-        <p className="p__opensans">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime quis accusamus aspernatur nobis sint, quibusdam iusto perferendis reprehenderit, numquam ex explicabo fugiat at? Iste eum odio repudiandae aliquid ea ratione?</p>
-      </div>
-
-      <div className="app__aboutus-content_img flex__center">
-        <img src={images.aboutImg} alt="about_img" />
+    <div className="app__aboutus-content_history">
+        <h1 className="headtext__cormorant">Aldwin Bautista</h1>
+        <img src={images.aldwin} alt="profile_pic" className="profile__img" />
+        <p className="p__about">Aldwin love the feel of wood curls flying off the lathe as I begin to shape the log in front of me. The sound of scraping changes based on the wetness of the wood, the speed at which the lathe is turning.</p>
       </div>
 
       <div className="app__aboutus-content_history">
-        <h1 className="headtext__cormorant">Our History</h1>
-        <img src={images.spoon} alt="about_spoon" className="spoon__img" />
-        <p className="p__opensans">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni ea debitis non harum excepturi quis est praesentium enim alias temporibus blanditiis, optio, voluptatum beatae totam omnis, maiores pariatur cumque assumenda!</p>
+        <h1 className="headtext__cormorant ">Matt Wilson</h1>
+        <img src={images.matt} alt="profile_pic" className="profile__img" />
+        <p className="p__about">Matt roared towards them with speed and violence they had not anticipated. They both turned to run but by that time it was too late. The wave crashed into their legs sweeping both of them off of their feet.</p>
+      </div>
+
+      <div className="app__aboutus-content_history">
+        <h1 className="headtext__cormorant">Ray Yu</h1>
+        <img src={images.ray} alt="profile_pic" className="profile__img" />
+        <p className="p__about">Ray heard the song coming from a distance, lightly floating over the air to his ears. Although it was soft and calming, he was wary. It seemed a little too soft and a little too calming for everything that was going on. </p>
       </div>
     </div>
   </div>
