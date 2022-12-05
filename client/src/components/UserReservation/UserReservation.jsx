@@ -31,9 +31,9 @@ function UserReservation({ userObj }, props) {
 
   function deleteReservation() {
     axios
-      .delete(`http://localhost:8000/reservations/${resId}`)
-      .then((res) => props.setOwnerView("OwnerRestaurant"))
-      .catch((e) => console.error(`Error: ${e}`));
+      .delete(`http://localhost:8000/reservations/${resId}/delete`)
+      .then((res) => console.log('Delete successful', res))
+      .catch((error) => console.error(error.response.data));
   }
 
 
@@ -51,13 +51,32 @@ function UserReservation({ userObj }, props) {
     return null;
   }
 
-  const reservation1 = reservationInfo[resId - 1];  // index - 1 to get first item in array
+  console.log("RESID: ", resId);
+  const reservation1 = reservationInfo.find((i) => i.id === resId);
+  console.log("res1", reservation1);
+  if (!reservation1) {
+    return (
+      <div className="res_div">
+        {<h2>You currently have no reservation</h2>}
+      </div>
+    );
+  }
+  // if (!reservationInfo[resId - 1]) {
+  //   return (
+  //     <div className="res_div">
+  //       {<h2>You currently have no reservation</h2>}
+  //     </div>
+  //   );
+  // }
+  // const resTest1 = reservationInfo.find((i) => i.id === resId);
+  // console.log("resTest: ", resTest1);
 
+  // const reservation1 = reservationInfo[resId - 1];  // index - 1 to get first item in array
+  // console.log("RES1: ", reservation1);
   const userId = reservation1.user_id;
   const restaurantId = reservation1.restaurant_id;
 
   const name1 = userInfo.users.find((i) => i.id === userId);
-
   const userName = name1.name;
 
   const rest1 = restaurantInfo.find((i) => i.id === restaurantId);
@@ -66,6 +85,7 @@ function UserReservation({ userObj }, props) {
   const restaurantImg = rest1.img;
   const restaurantAddress = rest1.address;
   const restaurantPhone = rest1.phone;
+  const whatever = false;
 
   return (
     <div className="res_div">
@@ -92,8 +112,8 @@ function UserReservation({ userObj }, props) {
       <div className="res_bottom_links">
         <Link to={"/"}>
           <button className="custom__button">Home Page</button>
+          <button className="custom__button" onClick={deleteReservation}>Cancel Reservation</button>
         </Link >
-        <button className="custom__button" onClick={deleteReservation}>Cancel Reservation</button>
       </div>
     </div>
   );

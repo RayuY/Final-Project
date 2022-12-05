@@ -6,9 +6,12 @@ import "./UserRestaurantInfo.css";
 function UserRestaurantInfo({ restaurant }) {
   const [reservation, setReservation] = useState([]);
 
+  const restId = useParams();
+  const resId = Number(restId.id);
+
   const user = {
     id: 3
-  }
+  };
 
   useEffect(() => {
     axios
@@ -22,16 +25,31 @@ function UserRestaurantInfo({ restaurant }) {
   if (reservation.length === 0) {
     return null;
   }
+  console.log("L28 all reservation: ", reservation);
+  const spotReservation = reservation[reservation.length - 1].id; //gets the last index in the array to get id
+  console.log("L30 spotreservation last id of index========= ", spotReservation);
+  const newRes = reservation.find((i) => i.id === spotReservation); //returns object with id of spot reservation(last reservation)
+  console.log("L32 newRes object with id = spotReservation ======", newRes);
 
-  const spotReservation = reservation[reservation.length - 1].id;
+  console.log("L34 newRes.restaurant_id", newRes.restaurant_id);  //last reservations restaurant_id... needed?
 
-  const userId = user.id;
-  const restaurantId = restaurant.id;
-  const partySize = 2;
+  const userId = user.id;               // good
+  const restaurantId = restaurant.id;   // good
+  const partySize = 2;                  // good
+
+
+  // const resSomething = reservation.find((i) => i.id === spotReservation); // same as 31 hahahaha delete!!
+  // console.log("L42 resSomething ======", resSomething);
+  // const resSomethingId = resSomething.id;                                 // probably not needed hahaha
+  // console.log("L44 resSomeID ======", resSomethingId);
+
+  const newId = (newRes.id + 1);                // grabs last reservation id + 1 for the new reservations url 
+  console.log("L47 newId =======", newId);      // first booking only 2 reservations => r/3 => cancel => 2 + 1 => r/3 
+
 
   function handleSubmit() {
-    const newReservation = { userId, restaurantId, partySize }
-    console.log("newRest:", newReservation)
+    const newReservation = { userId, restaurantId, partySize };
+    console.log("newRest:", newReservation);
     axios
       .post(`http://localhost:8000/reservations`, newReservation)
       .catch((e) => console.error(`Error: ${e}`));
@@ -60,13 +78,15 @@ function UserRestaurantInfo({ restaurant }) {
           <img className="owner_restaurant_info_image" src={restaurant.img} />
         </div>
       </div>
-      <Link to={`/reservations/${spotReservation}`}>
-      <button
-        className="custom__button"
-        onClick={handleSubmit}
-      >
-        Reserve table !
-      </button>
+      {/* <Link to={`/reservations/${resSomething}`}> */}
+      {/* <Link to={`/reservations/${spotReservation + 1}`}> */}
+      <Link to={`/reservations/${newId}`}>
+        <button
+          className="custom__button"
+          onClick={handleSubmit}
+        >
+          Reserve table !
+        </button>
       </Link>
     </div>
   );
