@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { IdContext } from "../../IdContext";
 import axios from "axios"
 import { useParams } from "react-router-dom";
 

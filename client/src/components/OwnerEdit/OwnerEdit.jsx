@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./OwnerEdit.css";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
 
 function OwnerEdit(props) {
   const ownerId = Number(props.id);
