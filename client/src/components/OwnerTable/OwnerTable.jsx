@@ -27,10 +27,10 @@ function OwnerTable(props) {
   }
 
   function handleSubmit() {
-    const spot2 = Number(tableNum2)
-    const spot4 = Number(tableNum4)
-    const spot6 = Number(tableNum6)
-    const spot = { spot2, spot4, spot6 }
+    const spot2 = Number(tableNum2);
+    const spot4 = Number(tableNum4);
+    const spot6 = Number(tableNum6);
+    const spot = { spot2, spot4, spot6 };
 
     axios
       .put(`http://localhost:8000/restaurants/${restaurant.id}`, spot)
@@ -58,8 +58,8 @@ function OwnerTable(props) {
             <h3>Number of Tables</h3>
             <div className="num_of_tables">
               <form>
-                <input type="table_value_2" value={tableNum2} onChange={(e) => setTableNum2(e.target.value)}placeholder="0" />
-                <input type="table_value_4" value={tableNum4} onChange={(e) => setTableNum4(e.target.value)}placeholder="0" />
+                <input type="table_value_2" value={tableNum2} onChange={(e) => setTableNum2(e.target.value)} placeholder="0" />
+                <input type="table_value_4" value={tableNum4} onChange={(e) => setTableNum4(e.target.value)} placeholder="0" />
                 <input type="table_value_6" value={tableNum6} onChange={(e) => setTableNum6(e.target.value)} placeholder="0" />
               </form>
             </div>

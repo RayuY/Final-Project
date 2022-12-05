@@ -37,10 +37,6 @@ function UserReservation({ userObj }, props) {
   }
 
 
-
-
-
-
   if (reservationInfo.length === 0) {
     return null;
   }
@@ -51,9 +47,7 @@ function UserReservation({ userObj }, props) {
     return null;
   }
 
-  console.log("RESID: ", resId);
   const reservation1 = reservationInfo.find((i) => i.id === resId);
-  console.log("res1", reservation1);
   if (!reservation1) {
     return (
       <div className="res_div">
@@ -61,18 +55,7 @@ function UserReservation({ userObj }, props) {
       </div>
     );
   }
-  // if (!reservationInfo[resId - 1]) {
-  //   return (
-  //     <div className="res_div">
-  //       {<h2>You currently have no reservation</h2>}
-  //     </div>
-  //   );
-  // }
-  // const resTest1 = reservationInfo.find((i) => i.id === resId);
-  // console.log("resTest: ", resTest1);
 
-  // const reservation1 = reservationInfo[resId - 1];  // index - 1 to get first item in array
-  // console.log("RES1: ", reservation1);
   const userId = reservation1.user_id;
   const restaurantId = reservation1.restaurant_id;
 

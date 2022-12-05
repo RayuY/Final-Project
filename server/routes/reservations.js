@@ -25,7 +25,7 @@ router.post("/", (req, res) => {
   const restaurantId = body.restaurantId;
   console.log("testtest: ", userId, partySize, restaurantId);
   reservations.addReservation(userId, restaurantId, partySize).then((data) => {
-    return res.send("OK");
+    return res.json(data.rows[0]);
   });
 
 });
