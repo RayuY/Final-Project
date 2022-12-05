@@ -92,7 +92,7 @@ function UserRestaurantInfo({ restaurant }) {
       </button>
 
       </Link>
-    </div >
+    </>
   );
 
 }
