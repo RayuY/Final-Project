@@ -34,6 +34,7 @@
   font-size: 22px;
   padding: 0.25rem;
   border-radius: 0.5rem;
+  background-color: grey;
 }
 
 .btn {
@@ -61,3 +62,4 @@
   height: 60rem;
   color: var(--color-white);
 }
+

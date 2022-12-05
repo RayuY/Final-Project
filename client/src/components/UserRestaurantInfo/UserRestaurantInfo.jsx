@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import "./UserRestaurantInfo.css";
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 
 function UserRestaurantInfo({ restaurant }) {
   const [reservation, setReservation] = useState([]);
@@ -37,23 +39,31 @@ function UserRestaurantInfo({ restaurant }) {
       .catch((e) => console.error(`Error: ${e}`));
   }
 
+  let review = '⭐'
+  let noReview = 'No reviews yet.'
+
   return (
+
     <div className="owner_restaurant_info_outer">
       <div className="owner_restaurant_info">
         <div className="owner_restaurant_info_container">
           <div className="owner_restaurant_info_title">
-            <h1>{restaurant.title}</h1>
+            <div className="owner_restaurant_info_description p__opensans">
+              <h3>Restaurant Review :{restaurant.review ? review.repeat(restaurant.review) : noReview}</h3>
+            </div>
           </div>
-          <div className="owner_restaurant_info_description">
-            <p>Description:</p>
+          <div className="owner_restaurant_info_description p__opensans">
+            <p>Restaurant Description:</p>
             <h3>{restaurant.description}</h3>
           </div>
-          <div className="owner_restaurant_info_address">
+          <div className="owner_restaurant_info_address p__opensans">
             <p>Address:</p>
             <h3>{restaurant.address}</h3>
-            <h4>Table for 2: {restaurant.spot2}</h4>
-            <h4>Table for 4: {restaurant.spot4}</h4>
-            <h4>Table for 6: {restaurant.spot6}</h4>
+          </div>
+          <div className="owner_restaurant_info_address p__opensans">
+            <h4>Table avaliable for party of 2 : {restaurant.spot2}</h4>
+            <h4>Table avaliable for party of 4 : {restaurant.spot4}</h4>
+            <h4>Table avaliable for party of 6 : {restaurant.spot6}</h4>
           </div>
         </div>
         <div>
@@ -61,14 +71,14 @@ function UserRestaurantInfo({ restaurant }) {
         </div>
       </div>
       <Link to={`/reservations/${spotReservation}`}>
-      <button
-        className="custom__button"
-        onClick={handleSubmit}
-      >
-        Reserve table !
-      </button>
+        <button
+          className="custom__button"
+          onClick={handleSubmit}
+        >
+          Reserve table !
+        </button>
       </Link>
-    </div>
+    </div >
   );
 }
 

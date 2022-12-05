@@ -28,27 +28,25 @@ const Restaurant = () => {
     <div className="owner_page">
       <div className="owner_page_top_split">
         <div className="owner_page_top">
-          <h3>Welcome</h3>
-          <h1>{restaurant.title}</h1>
+
           <div className="owner_page_spoon">
             <img
               src={images.spoon}
               className="spoon__img"
-              style={{ marginTop: 15, transform: "rotate(180deg)" }}
+              style={{ transform: "rotate(300deg)" }}
             />
+            <h1 className='restaurant__title'>{restaurant.title}</h1>
             <img
               src={images.spoon}
               className="spoon__img"
-              style={{ marginTop: 15 }}
+              style={{ transform: "rotate(240deg)" }}
             />
           </div>
         </div>
         <div className="owner_page_add"></div>
       </div>
 
-      <div className="owner_page_restaurant">
-        <UserRestaurantInfo restaurant={ restaurant }/>
-      </div>
+      <UserRestaurantInfo restaurant={restaurant} />
 
       <div className="owner_bottom_links">
         <button className="custom__button">View reservation</button>

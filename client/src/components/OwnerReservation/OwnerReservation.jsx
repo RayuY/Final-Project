@@ -16,39 +16,40 @@ function OwnerReservation(props) {
       .catch((e) => console.error(`Error: ${e}`));
   }, []);
 
-  const spotReservation = reservation.find((i) =>i.owner_id === id)
+  const spotReservation = reservation.find((i) => i.owner_id === id)
 
   if (!spotReservation) {
     return null;
   }
 
   return (
-    <div className="owner_table">
-      <h2 className="owner_table_name">Listed tables</h2>
-      <div className="owner_table_main">
-        <div className="owner_table_num_of_seats">
-          <h3>Number of Seats</h3>
-          <ul className="list_of_seats">
-            <h3>
-              <li>2</li>
-              <li>4</li>
-              <li>6</li>
-            </h3>
-          </ul>
-        </div>
+    <>
+      <div className="owner_table">
+        <h2 className="owner_table_name ">Currently Listed Tables</h2>
+        <div className="owner_table_main">
+          <div className="owner_table_num_of_seats p__opensans">
+            <h3>Number of Seats</h3>
+            <ul className="list_of_seats">
+              <h3>
+                <li>2</li>
+                <li>4</li>
+                <li>6</li>
+              </h3>
+            </ul>
+          </div>
 
-        <div className="owner_table_num_of_tables">
-          <ul>
-            <h3>Number of Tables</h3>
-            <div className="num_of_tables">
-              <h3>{spotReservation.spot2}</h3>
-              <h3>{spotReservation.spot4}</h3>
-              <h3>{spotReservation.spot6}</h3>
-            </div>
-          </ul>
+          <div className="owner_table_num_of_tables p__opensans">
+            <ul>
+              <h3>Number of Tables</h3>
+              <div className="num_of_tables">
+                <h3>{spotReservation.spot2}</h3>
+                <h3>{spotReservation.spot4}</h3>
+                <h3>{spotReservation.spot6}</h3>
+              </div>
+            </ul>
+          </div>
         </div>
       </div>
-
       <div className="button_list_tables">
         <button
           className="custom__button"
@@ -57,7 +58,7 @@ function OwnerReservation(props) {
           Edit tables!
         </button>
       </div>
-    </div>
+    </>
   );
 }
 

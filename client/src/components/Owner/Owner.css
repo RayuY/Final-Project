@@ -5,9 +5,7 @@
   background: url("https://cdn.oliverbonacininetwork.com/uploads/sites/42/2022/04/Canoe-Interior-Evening-Vibes-5170.jpg");
   background-position: center center;
   background-repeat: no-repeat;
-  padding-top: 15px;
-  height: 735px;
-  color: var(--color-white);
+  height: 88vh;
 }
 .owner_page_top_split {
   display: flex;
@@ -17,16 +15,16 @@
 .owner_page_top {
   flex-direction: column;
   display: flex;
-  width: 88%;
+  width: 100%;
   align-items: center;
   padding-left: 200px;
 }
 
 .owner_page_spoon {
-  width: 10vw;
+  width: 40vw;
   display: flex;
   justify-content: space-between;
-  padding-bottom: 1rem;
+  margin: 3rem 0 2rem;
 }
 
 .owner_page_spoon img {
@@ -58,4 +56,12 @@
 
 .owner_bottom_links button {
   width: 210px;
+}
+
+
+.owner_page_restaurant{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }

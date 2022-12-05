@@ -23,7 +23,6 @@
 .owner_restaurant_info_title {
   display: flex;
   justify-content: center;
-  margin-bottom: 50px;
 }
 
 .owner_restaurant_info_description {
@@ -41,12 +40,12 @@
 }
 
 .owner_restaurant_info_image {
-  height: 300px;
-  width: 250px;
+  height: 100%;
+  width: 100%;
   border: solid;
-  border-width: 1px;
+  border-width: 5px;
   border-radius: 5px;
-  margin: 15px;
+  margin: 2rem;
 }
 
 .custom__button {

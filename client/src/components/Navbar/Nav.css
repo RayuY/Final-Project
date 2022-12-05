@@ -22,11 +22,8 @@
 
 
 .app__navbar-links {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-left: 8rem;
+  position: absolute ;
+  left: 54rem;
 
   list-style: none;
 }
