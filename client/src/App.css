@@ -1,4 +1,4 @@
-@import "~slick-carousel/slick/slick.css"; 
+@import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 
 .section__padding {
@@ -57,17 +57,17 @@
 
 .custom__button {
   background-color: var(--color-crimson);
-    color: var(--color-black);
-    font-family: var(--font-base);
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    line-height: 28px;
-    font-size: 16px;
-    padding: 0.5rem 1.5rem;
-    border-radius: 1px;
-    border: none;
-    outline: none;
-    cursor: pointer;
+  color: var(--color-black);
+  font-family: var(--font-base);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 28px;
+  font-size: 16px;
+  padding: 0.5rem 1.5rem;
+  border-radius: 1px;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
 .p__cormorant {
@@ -82,12 +82,12 @@
 
 .p__opensans {
   font-family: var(--font-alt);
-  color: var(--color-white);
   font-weight: 400;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   text-transform: capitalize;
-  line-height: 28px;
-  font-size: 16px;
+  line-height: 30px;
+  font-size: 15px;
+  color: white
 }
 
 .headtext__cormorant {
@@ -99,10 +99,11 @@
 }
 
 .spoon__img {
-  width: 45px;
+  width: 70px;
 }
 
 @media screen and (min-width: 2000px) {
+
   .custom__button,
   .p__cormorant {
     font-size: 37px;
@@ -152,7 +153,7 @@
   .section__padding {
     padding: 4rem 2rem;
   }
-  
+
   .p__cormorant {
     font-size: 21px;
   }

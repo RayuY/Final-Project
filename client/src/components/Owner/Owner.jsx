@@ -1,11 +1,8 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import {
   useParams,
   BrowserRouter as Router,
-  Routes,
-  Route,
-  Link,
 } from "react-router-dom";
 
 import { images } from "../../constants";
@@ -24,19 +21,6 @@ const Owner = () => {
   const userId = Number(id);
 
   const [ownerView, setOwnerView] = useState("OwnerRestaurant");
-
-  // useEffect(() => {
-  //   axios
-  //     .get(`http://localhost:8000/owners/${id}`)
-  //     .then((res) => {
-  //       setState(res.data.owners);
-  //     })
-  //     .catch((e) => console.error(`Error: ${e}`));
-  // }, []);
-
-  // const owner = state.map((element, index) => {
-  //   return <h1 key={index}>{element.name}</h1>;
-  // });
 
   useEffect(() => {
     axios
@@ -57,24 +41,25 @@ const Owner = () => {
     <div className="owner_page">
       <div className="owner_page_top_split">
         <div className="owner_page_top">
-          <h3>Hello </h3>
-          <h1>{owner.name}</h1>
           <div className="owner_page_spoon">
             <img
               src={images.spoon}
               className="spoon__img"
-              style={{ marginTop: 15, transform: "rotate(180deg)" }}
+              style={{ marginTop: 15, transform: "rotate(300deg)" }}
             />
+            <h1>Your Restaurants</h1>
             <img
               src={images.spoon}
               className="spoon__img"
-              style={{ marginTop: 15 }}
+              style={{ marginTop: 15, transform: "rotate(240deg)" }}
             />
+
           </div>
         </div>
+
         <div className="owner_page_add">
           <IoMdAddCircle className="owner_page_add_circle" onClick={() => setOwnerView("OwnerNew")} />
-          <p className="owner_page_add_new">Add new restaurant</p>
+          <p className="owner_page_add_new p__opensans">Add new restaurant</p>
         </div>
       </div>
 
