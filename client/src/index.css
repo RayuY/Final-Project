@@ -17,6 +17,7 @@
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
+  color: white;
 }
 
 a {
@@ -49,4 +50,9 @@ a {
     -webkit-transform: translateY(0);
             transform: translateY(0);
   }
+}
+
+
+.restaurant__title {
+  font-family: 'Caveat', cursive;
 }

@@ -34,10 +34,12 @@
   font-size: 22px;
   padding: 0.25rem;
   border-radius: 0.5rem;
+  background-color: grey;
 }
 
 .btn {
   margin-top: 1rem;
+  
 }
 
 .line {

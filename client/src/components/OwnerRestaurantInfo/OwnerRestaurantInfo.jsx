@@ -3,6 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import "./OwnerRestaurantInfo.css";
 
+
 function OwnerRestaurantInfo(props) {
   const [restaurantInfo, setRestaurantInfo] = useState([]);
   const { id } = useParams();
@@ -28,10 +29,9 @@ function OwnerRestaurantInfo(props) {
       <div className="owner_restaurant_info">
         <div className="owner_restaurant_info_container">
           <div className="owner_restaurant_info_title">
-            <h1>{restaurant.title}</h1>
+            <h1 className="restaurant__title">{restaurant.title}</h1>
           </div>
           <div className="owner_restaurant_info_description">
-            <p>Description:</p>
             <h3>{restaurant.description}</h3>
           </div>
           <div className="owner_restaurant_info_address">

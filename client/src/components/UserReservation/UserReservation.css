@@ -5,28 +5,20 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
-  /* background-color: rgba(100, 100, 100); */
-  /* background: url("http://cdn.cnn.com/cnnnext/dam/assets/190710135245-12-waterfront-restaurants.jpg"); */
-  /* background: url("https://cdn.oliverbonacininetwork.com/uploads/sites/42/2022/04/Canoe-Interior-Evening-Vibes-5170.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  height: 735px;
-  color: var(--color-white); */
 }
 
 .res_panel {
-  width: 50%;
-  height: 35rem;
+  width: 65%;
+  height: 41rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  border: 5px solid;
   background-color: rgba(44, 40, 40, 0.69);
-  border: 5px solid white;
   border-radius: 10px;
-  margin-top: 1rem;
-  padding-bottom: 1rem;
-  padding-top: .5rem;
+  padding-bottom: 5rem;
+  padding-top: 1rem;
 }
 
 .res_div_spoon {
@@ -46,6 +38,7 @@
 
 .res_name {
   margin-bottom: 2rem;
+  font-family: 'Caveat', cursive;
 }
 
 .res_phone {

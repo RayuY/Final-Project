@@ -50,10 +50,6 @@ function UserReservation({ userObj }) {
 
   const rest1 = restaurantInfo.find((i) => i.id === restaurantId);
 
-  const restaurantName = rest1.title;
-  const restaurantImg = rest1.img;
-  const restaurantAddress = rest1.address;
-  const restaurantPhone = rest1.phone;
 
   return (
     <div className="res_div">
@@ -72,10 +68,10 @@ function UserReservation({ userObj }) {
             style={{ marginTop: 15 }}
           />
         </div>
-        <img className="restaurantimg" src={restaurantImg} />
-        <h1 className="res_name">{restaurantName}</h1>
-        <h3>{restaurantAddress}</h3>
-        <h3 className="res_phone">250-669-6969</h3>
+        <img className="restaurantimg" src={rest1.img} />
+        <h1 className="restaurant__title">{rest1.title}</h1>
+        <h3>Address : {rest1.address}</h3>
+        <h3 className="res_phone">Phone : {setRestaurantInfo.phone} NEED FIX</h3>
       </div>
       <div className="res_bottom_links">
         <button className="custom__button">Home Page</button>
