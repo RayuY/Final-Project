@@ -1,7 +1,6 @@
 import React from 'react'
-import { useRef, useState, useEffect, useContext } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import './Login.css'
-import { images } from "../../constants";
 
 const Login = () => {
   const userRef = useRef();
@@ -9,7 +8,6 @@ const Login = () => {
 
   const [user, setUser] = useState('');
   const [pwd, setPwd] = useState('');
-  const [errMsg, setErrMsg] = useState('');
 
 
   useEffect(() => {
@@ -50,7 +48,6 @@ const Login = () => {
         <p className='login__font'>
           Need an Account?<br />
           <span className="line">
-            {/*put router link here*/}
             <a href="#" className='login__font'>Sign Up</a>
           </span>
         </p>
