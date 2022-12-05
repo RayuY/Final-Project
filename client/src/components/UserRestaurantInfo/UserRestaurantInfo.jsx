@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import "./UserRestaurantInfo.css";
-import Popup from 'reactjs-popup';
-import 'reactjs-popup/dist/index.css';
 
 function UserRestaurantInfo({ restaurant }) {
   const [reservation, setReservation] = useState([]);
