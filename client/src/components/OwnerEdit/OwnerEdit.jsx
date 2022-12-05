@@ -31,7 +31,6 @@ function OwnerEdit(props) {
 
   function handleSubmit() {
     const newRestaurant = { id, title, description, address, image };
-    console.log("newRest:", newRestaurant);
     axios
       .put(`http://localhost:8000/restaurants/${restaurant.id}/edit`, newRestaurant)
       .then((res) => props.setOwnerView("OwnerRestaurantInfo"))
