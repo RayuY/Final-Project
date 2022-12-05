@@ -82,16 +82,17 @@ function UserRestaurantInfo({ restaurant }) {
             </button>
           </div>
         </div>
-        <Link to={`/reservations/${spotReservation}`}>
-          <button
-            className="custom__button"
-            onClick={handleSubmit}
-          >
-            Reserve table !
-          </button>
-        </Link>
-      </div >
-    </>
+      </div>
+      <Link to={`/reservations/${spotReservation + 1}`}>
+      <button
+        className="custom__button"
+        onClick={handleSubmit}
+      >
+        Reserve table !
+      </button>
+
+      </Link>
+    </div >
   );
 
 }

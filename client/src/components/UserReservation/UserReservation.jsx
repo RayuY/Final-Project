@@ -6,7 +6,7 @@ import "./UserReservation.css";
 import { images } from "../../constants";
 import User from "../User/User";
 
-function UserReservation({ userObj }) {
+function UserReservation() {
   const [reservationInfo, setReservationInfo] = useState([]);
   const [restaurantInfo, setRestaurantInfo] = useState([]);
   const [userInfo, setUserInfo] = useState([]);
