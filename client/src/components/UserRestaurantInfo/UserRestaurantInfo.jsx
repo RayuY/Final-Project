@@ -2,15 +2,13 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import "./UserRestaurantInfo.css";
-import Popup from 'reactjs-popup';
-import 'reactjs-popup/dist/index.css';
 
 function UserRestaurantInfo({ restaurant }) {
   const [reservation, setReservation] = useState([]);
 
   const user = {
     id: 3
-  }
+  };
 
   useEffect(() => {
     axios
@@ -32,15 +30,15 @@ function UserRestaurantInfo({ restaurant }) {
   const partySize = 2;
 
   function handleSubmit() {
-    const newReservation = { userId, restaurantId, partySize }
-    console.log("newRest:", newReservation)
+    const newReservation = { userId, restaurantId, partySize };
+    console.log("newRest:", newReservation);
     axios
       .post(`http://localhost:8000/reservations`, newReservation)
       .catch((e) => console.error(`Error: ${e}`));
   }
 
-  let review = '⭐'
-  let noReview = 'No reviews yet.'
+  let review = '⭐';
+  let noReview = 'No reviews yet.';
 
   return (
 
@@ -71,12 +69,12 @@ function UserRestaurantInfo({ restaurant }) {
         </div>
       </div>
       <Link to={`/reservations/${spotReservation + 1}`}>
-      <button
-        className="custom__button"
-        onClick={handleSubmit}
-      >
-        Reserve table !
-      </button>
+        <button
+          className="custom__button"
+          onClick={handleSubmit}
+        >
+          Reserve table !
+        </button>
 
       </Link>
     </div >
