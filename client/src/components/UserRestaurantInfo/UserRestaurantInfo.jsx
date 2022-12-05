@@ -47,59 +47,53 @@ function UserRestaurantInfo({ restaurant }) {
 
 
   return (
-
-    <div className="owner_restaurant_info_outer">
-      <div className="owner_restaurant_info">
-        <div className="owner_restaurant_info_container">
-          <div className="owner_restaurant_info_title">
+    <>
+      {modalOpen && <Modal setOpenModal={setModalOpen} />}
+      <div className="owner_restaurant_info_outer">
+        <div className="owner_restaurant_info">
+          <div className="owner_restaurant_info_container">
+            <div className="owner_restaurant_info_title">
+              <div className="owner_restaurant_info_description p__opensans">
+                <h3>Restaurant Review :{restaurant.review ? review.repeat(restaurant.review) : noReview}</h3>
+              </div>
+            </div>
             <div className="owner_restaurant_info_description p__opensans">
-              <h3>Restaurant Review :{restaurant.review ? review.repeat(restaurant.review) : noReview}</h3>
+              <p>Restaurant Description:</p>
+              <h3>{restaurant.description}</h3>
+            </div>
+            <div className="owner_restaurant_info_address p__opensans">
+              <p>Address:</p>
+              <h3>{restaurant.address}</h3>
+            </div>
+            <div className="owner_restaurant_info_address p__opensans">
+              <h4>Table avaliable for party of 2 : {restaurant.spot2}</h4>
+              <h4>Table avaliable for party of 4 : {restaurant.spot4}</h4>
+              <h4>Table avaliable for party of 6 : {restaurant.spot6}</h4>
             </div>
           </div>
-          <div className="owner_restaurant_info_description p__opensans">
-            <p>Restaurant Description:</p>
-            <h3>{restaurant.description}</h3>
-          </div>
-          <div className="owner_restaurant_info_address p__opensans">
-            <p>Address:</p>
-            <h3>{restaurant.address}</h3>
-          </div>
-          <div className="owner_restaurant_info_address p__opensans">
-            <h4>Table avaliable for party of 2 : {restaurant.spot2}</h4>
-            <h4>Table avaliable for party of 4 : {restaurant.spot4}</h4>
-            <h4>Table avaliable for party of 6 : {restaurant.spot6}</h4>
+          <div>
+            <button
+              className="openModalBtn"
+              onClick={() => {
+                setModalOpen(true);
+              }}
+            >
+              <img className="owner_restaurant_info_image" src={restaurant.img} />
+            </button>
           </div>
         </div>
-
-        <div className="App">
-          <h1>Hey, click on the button to open the modal.</h1>
+        <Link to={`/reservations/${spotReservation}`}>
           <button
-            className="openModalBtn"
-            onClick={() => {
-              setModalOpen(true);
-            }}
+            className="custom__button"
+            onClick={handleSubmit}
           >
-            <img className="owner_restaurant_info_image" src={restaurant.img} />
+            Reserve table !
           </button>
-
-          {modalOpen && <Modal setOpenModal={setModalOpen} />}
-        </div>
-        <div>
-          
-        </div>
-
-
-      </div>
-      <Link to={`/reservations/${spotReservation}`}>
-        <button
-          className="custom__button"
-          onClick={handleSubmit}
-        >
-          Reserve table !
-        </button>
-      </Link>
-    </div >
+        </Link>
+      </div >
+    </>
   );
+
 }
 
 export default UserRestaurantInfo;
