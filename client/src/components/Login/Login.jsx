@@ -4,7 +4,6 @@ import './Login.css'
 
 const Login = () => {
   const userRef = useRef();
-  const errRef = useRef();
 
   const [user, setUser] = useState('');
   const [pwd, setPwd] = useState('');
@@ -48,7 +47,7 @@ const Login = () => {
         <p className='login__font'>
           Need an Account?<br />
           <span className="line">
-            <a href="#" className='login__font'>Sign Up</a>
+            <span className='login__font'>Sign Up</span>
           </span>
         </p>
       </section>

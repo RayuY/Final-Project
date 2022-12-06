@@ -2,7 +2,7 @@ import "./App.css";
 import { Navbar, ScrollButton, Owner, Homepage, User, AboutUs, Login, Register } from "./components";
 import { Footer } from "./container";
 
-import { BrowserRouter as Router, Route, Routes, Link, Redirect, } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import { UserContext } from './UserContext';
 import { useMemo, useState } from "react";

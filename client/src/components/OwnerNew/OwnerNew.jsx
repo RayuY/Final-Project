@@ -53,9 +53,9 @@ function OwnerNew(props) {
         </div>
         <div>
           {!image? 
-          <img className="owner_restaurant_info_image" src={images.tablebae} />
+          <img className="owner_restaurant_info_image" src={images.tablebae} alt ='rest-info-img' />
           : 
-          <img className="owner_restaurant_info_image" src={image} />}
+          <img className="owner_restaurant_info_image" src={image} alt ='rest-info-img' />}
         </div>
       </div>
       <button

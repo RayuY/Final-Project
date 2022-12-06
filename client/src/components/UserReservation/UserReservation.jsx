@@ -73,15 +73,17 @@ function UserReservation() {
             src={images.spoon}
             className="spoon__img"
             style={{ marginTop: 15, transform: "rotate(180deg)" }}
+            alt='images.spoon'
           />
           <img
             src={images.spoon}
             className="spoon__img"
             style={{ marginTop: 15 }}
+            alt='images.spoon'
           />
         </div>
 
-        <img className="restaurantimg" src={rest1.img} />
+        <img className="restaurantimg" src={rest1.img} alt='images.spoon'/>
         <h1 className="restaurant__title">{rest1.title}</h1>
         <h3>Address : {rest1.address}</h3>
         <h3 className="res_phone">Phone : {rest1.phone}</h3>

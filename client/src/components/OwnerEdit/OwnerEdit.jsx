@@ -86,7 +86,7 @@ function OwnerEdit(props) {
           </div>
         </div>
         <div>
-          <img className="owner_restaurant_info_image" src={restaurant.img} />
+          <img className="owner_restaurant_info_image" src={restaurant.img} alt ='rest-info-img' />
         </div>
       </div>
       <button className="custom__button" onClick={handleSubmit}>

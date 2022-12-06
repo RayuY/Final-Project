@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./UserRestaurantInfo.css";
 
 import Modal from "./Modal";
@@ -12,9 +12,6 @@ function UserRestaurantInfo({ restaurant }) {
   const [modalOpen, setModalOpen] = useState(false);
 
   const [reservation, setReservation] = useState([]);
-
-  const restId = useParams();
-  const resId = Number(restId.id);
 
   const user = {
     id: 3
@@ -81,7 +78,7 @@ function UserRestaurantInfo({ restaurant }) {
                 setModalOpen(true);
               }}
             >
-              <img className="owner_restaurant_info_image" src={restaurant.img} />
+              <img className="owner_restaurant_info_image" src={restaurant.img} alt='rest-info-img' />
             </button>
           </div>
         </div>

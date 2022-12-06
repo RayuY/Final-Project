@@ -6,13 +6,8 @@ import images from '../../constants/images';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../UserContext';
 import './Nav.css';
-import { useParams } from 'react-router-dom';
 
 const Navbar = () => {
-
-  const restId = useParams();
-  const resId = Number(restId.id);
-
 
   const { user, setUser } = useContext(UserContext);
 

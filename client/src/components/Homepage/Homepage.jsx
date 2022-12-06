@@ -1,15 +1,13 @@
 
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import "./Homepage.css";
 import axios from "axios";
 import Slider from "react-slick";
 import Row from "./Row"; 
 
-import { UserContext } from '../../UserContext';
 
 const Homepage = () => {
 
-  const { user, setUser } = useContext(UserContext);
   const [restaurant, setRestaurant] = useState([]);
 
   useEffect(() => {

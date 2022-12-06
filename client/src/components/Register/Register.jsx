@@ -68,7 +68,7 @@ const Register = () => {
             Already registered?<br />
             <span className="line">
               {/*put router link here*/}
-              <a href="#" className='register__font'>Sign In</a>
+              <span className='register__font'>Sign In</span>
             </span>
           </p>
         </section>
