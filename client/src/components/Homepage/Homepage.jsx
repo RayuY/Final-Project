@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect, useRef, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./Homepage.css";
 import axios from "axios";
 import Slider from "react-slick";
