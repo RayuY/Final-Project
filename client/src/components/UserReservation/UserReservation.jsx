@@ -1,12 +1,12 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import "./UserReservation.css";
 import { images } from "../../constants";
-import User from "../User/User";
 
 function UserReservation() {
+
   const [reservationInfo, setReservationInfo] = useState([]);
   const [restaurantInfo, setRestaurantInfo] = useState([]);
   const [userInfo, setUserInfo] = useState([]);
@@ -29,6 +29,14 @@ function UserReservation() {
       .catch((e) => console.error(`Error: ${e}`));
   }, []);
 
+  function deleteReservation() {
+    axios
+      .delete(`http://localhost:8000/reservations/${resId}/delete`)
+      .then((res) => console.log('Delete successful', res))
+      .catch((error) => console.error(error.response.data));
+  }
+
+
   if (reservationInfo.length === 0) {
     return null;
   }
@@ -39,18 +47,23 @@ function UserReservation() {
     return null;
   }
 
-  const reservation1 = reservationInfo[resId - 1];  // index - 1 to get first item in array
+  const reservation1 = reservationInfo.find((i) => i.id === resId);
+  if (!reservation1) {
+    return (
+      <div className="res_div">
+        {<h2>You currently have no reservation</h2>}
+      </div>
+    );
+  }
 
   const userId = reservation1.user_id;
   const restaurantId = reservation1.restaurant_id;
 
   const name1 = userInfo.users.find((i) => i.id === userId);
-
   const userName = name1.name;
 
   const rest1 = restaurantInfo.find((i) => i.id === restaurantId);
-
-
+  
   return (
     <div className="res_div">
       <div className="res_panel">
@@ -68,14 +81,18 @@ function UserReservation() {
             style={{ marginTop: 15 }}
           />
         </div>
+
         <img className="restaurantimg" src={rest1.img} />
         <h1 className="restaurant__title">{rest1.title}</h1>
         <h3>Address : {rest1.address}</h3>
         <h3 className="res_phone">Phone : {setRestaurantInfo.phone} NEED FIX</h3>
+
       </div>
       <div className="res_bottom_links">
-        <button className="custom__button">Home Page</button>
-        <button className="custom__button">Cancel Reservation</button>
+        <Link to={"/"}>
+          <button className="custom__button">Home Page</button>
+          <button className="custom__button" onClick={deleteReservation}>Cancel Reservation</button>
+        </Link >
       </div>
     </div>
   );

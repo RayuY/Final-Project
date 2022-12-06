@@ -92,10 +92,11 @@
 
 .headtext__cormorant {
   color: var(--color-golden);
-  font-size: 64px;
+  font-size: 3rem;
   line-height: 83.2px;
   letter-spacing: 0.04em;
   text-transform: capitalize;
+  margin-bottom: 1rem;
 }
 
 .spoon__img {
