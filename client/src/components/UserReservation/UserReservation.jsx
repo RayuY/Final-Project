@@ -18,6 +18,7 @@ function UserReservation() {
       axios.get("http://localhost:8000/reservations"),
       axios.get("http://localhost:8000/restaurants"),
       axios.get("http://localhost:8000/users"),
+      // axios.get("http://localhost:8000/twilio"),
     ])
       .then((all) => {
         setReservationInfo(all[0].data.reservations);
