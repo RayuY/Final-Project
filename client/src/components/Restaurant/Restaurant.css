@@ -16,3 +16,19 @@
   display: flex;
   justify-content: center;
 }
+
+.one {
+  margin-top: 2rem;
+}
+
+.restaurant__title {
+  font-family: 'Caveat', cursive;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+  font-size: 4rem;
+}
+
+.owner_page_add {
+  padding-top: 1rem;
+}

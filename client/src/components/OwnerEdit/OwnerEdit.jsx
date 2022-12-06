@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./OwnerEdit.css";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
 
 function OwnerEdit(props) {
   const ownerId = Number(props.id);
@@ -31,10 +30,9 @@ function OwnerEdit(props) {
 
   function handleSubmit() {
     const newRestaurant = { id, title, description, address, image };
-    console.log("newRest:", newRestaurant);
     axios
-      .put(`http://localhost:8000/restaurants/${restaurant.id}`, newRestaurant)
-      .then((res) => props.setOwnerView("OwnerRestaurant"))
+      .put(`http://localhost:8000/restaurants/${restaurant.id}/edit`, newRestaurant)
+      .then((res) => props.setOwnerView("OwnerRestaurantInfo"))
       .catch((e) => console.error(`Error: ${e}`));
   }
 

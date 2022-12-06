@@ -39,40 +39,40 @@ function OwnerTable(props) {
   }
 
   return (
-    <div className="owner_table">
-      <h2 className="owner_table_name">{restaurant.title}</h2>
-      <div className="owner_table_main">
-        <div className="owner_table_num_of_seats">
-          <h3>Number of Seats</h3>
-          <ul className="list_of_seats">
-            <h3>
-              <li>2</li>
-              <li>4</li>
-              <li>6</li>
-            </h3>
-          </ul>
-        </div>
+    <>
+      <div className="owner_table">
+        <h2 className="restaurant__title">{restaurant.title}</h2>
+        <div className="owner_table_main">
+          <div className="owner_table_num_of_seats">
+            <h3 className='p__opensans'>Number of Seats</h3>
+            <ul className="list_of_seats">
+              <h3>
+                <li>2</li>
+                <li>4</li>
+                <li>6</li>
+              </h3>
+            </ul>
+          </div>
 
-        <div className="owner_table_num_of_tables">
-          <ul>
-            <h3>Number of Tables</h3>
-            <div className="num_of_tables">
-              <form>
-                <input type="table_value_2" value={tableNum2} onChange={(e) => setTableNum2(e.target.value)} placeholder="0" />
-                <input type="table_value_4" value={tableNum4} onChange={(e) => setTableNum4(e.target.value)} placeholder="0" />
-                <input type="table_value_6" value={tableNum6} onChange={(e) => setTableNum6(e.target.value)} placeholder="0" />
-              </form>
-            </div>
-          </ul>
+          <div className="owner_table_num_of_tables">
+            <ul>
+              <h3 className='p__opensans'>Number of Tables</h3>
+              <div className="num_of_tables">
+                <form>
+                  <input className="input__list_table" type="table_value_2" value={tableNum2} onChange={(e) => setTableNum2(e.target.value)} />
+                  <input className="input__list_table" type="table_value_4" value={tableNum4} onChange={(e) => setTableNum4(e.target.value)} />
+                  <input className="input__list_table" type="table_value_6" value={tableNum6} onChange={(e) => setTableNum6(e.target.value)} />
+                  
+                </form>
+              </div>
+            </ul>
+          </div>
         </div>
       </div>
-
-      <div className="button_list_tables">
-        <button className="custom__button" onClick={handleSubmit}>
-          List tables!
-        </button>
-      </div>
-    </div>
+      <button className="custom__button" onClick={handleSubmit}>
+        List tables!
+      </button>
+    </>
   );
 }
 

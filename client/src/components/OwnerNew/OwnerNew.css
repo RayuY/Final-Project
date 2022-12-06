@@ -13,9 +13,17 @@
   padding: 1.5rem;
 }
 .owner_new_input input{
-  width: 20rem;
-  height: 23px;
+  width: 30rem;
+  height: 3rem;
   background: rgb(122, 122, 122);
   color: rgb(255, 255, 255);
 }
 
+.input__new_restaruant{
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+  width: 20rem;
+  height: 23px;
+}

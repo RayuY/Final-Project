@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import './OwnerNew.css'
+import { images } from '../../constants';
 
 
 function OwnerNew(props) {
@@ -10,22 +11,6 @@ function OwnerNew(props) {
   const [address, setAddress] = useState("");
   const [image, setImage] = useState("");
   const id = props.id
-  
-  // const handleSubmit = async() => {
-  //   const newRestaurant = { title, description, address, image }
-  //   console.log("newRest:", newRestaurant)
-
-  //   try {
-  //     const response = await axios({
-
-  //       .post(`http://localhost:8000/restaurants`, newRestaurant)
-  //       .then((res) => props.setOwnerView("OwnerRestaurant"))
-  //     })
-  //   }
-  //     .catch(e) {
-  //       console.error(`Error: ${e}`)
-  //     } 
-  // }
 
   function handleSubmit() {
     const newRestaurant = { id, title, description, address, image }
@@ -40,25 +25,32 @@ function OwnerNew(props) {
     <div className="owner_restaurant_info_outer">
       <div className="owner_restaurant_info">
         <div className="owner_new_container">
-          <div className="owner_new_info">
-            <h2>Please enter your new restaurant info:</h2>
+          <div className="owner_new_info p__opensans">
+            <h2>Enter your new restaurant info:</h2>
           </div>
-          <div className="owner_new_input">
+          <div className="owner_new_input p__opensans">
             <form>
-            <h3>Name</h3>
-            <input type="table_value_2" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Restaurant Name" />
-            <h3>Description</h3>
-            <input type="table_value_2" value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Description" className="owner_new_description" />
-            <h3>Address</h3>
-            <input type="table_value_2" value={address} onChange={(e) => setAddress(e.target.value)} placeholder="Address" />
-            <h3>Image</h3>
-                <input type="table_value_6" value={image} onChange={(e) => setImage(e.target.value)} placeholder="URL" />
-              </form>
+
+              <h3>Name</h3>
+              <input className="input__new_restaruant" type="table_value_2" value={title} onChange={(e) => setTitle(e.target.value)} required />
+
+              <h3>Description</h3>
+              <input className="input__new_restaruant" type="table_value_2" value={description} onChange={(e) => setDescription(e.target.value)} required />
+
+              <h3>Address</h3>
+              <input className="input__new_restaruant" type="table_value_2" value={address} onChange={(e) => setAddress(e.target.value)} required/>
+
+              <h3>Image</h3>
+              <input className="input__new_restaruant" type="table_value_6" value={image} onChange={(e) => setImage(e.target.value)}  required />
+
+            </form>
           </div>
         </div>
         <div>
-          {/* {!image ? : <img className="owner_restaurant_info_image" src={image} />} */}
-          <img className="owner_restaurant_info_image" src={image}/>
+          {!image? 
+          <img className="owner_restaurant_info_image" src={images.tablebae} />
+          : 
+          <img className="owner_restaurant_info_image" src={image} />}
         </div>
       </div>
       <button

@@ -1,22 +1,21 @@
 .owner_table{
-  padding-top: 50px;
   display: flex;
   flex-direction: column;
   align-content: center;
   justify-content: center;
-  width: 50vw;
-  border: solid;
-  border-width: 2px;
+  width: 80vh;
+  border-width: 5px;
   border-radius: 10px;
   background: rgba(44, 40, 40, 0.69);
   color: var(--color-white);
-  padding: 30px 60px;
+  padding: 10vh;
 }
 
 .owner_table_name {
   display: flex;
   justify-content: center;
-  padding-bottom: 10px;
+  font-family: var(--font-alt);
+  padding-bottom: 50px;
 }
 
 .owner_table_main {

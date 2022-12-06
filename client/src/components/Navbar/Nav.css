@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--color-black);
+  background: url("https://img.freepik.com/free-photo/black-texture_1205-327.jpg?1&w=1380&t=st=1670268203~exp=1670268803~hmac=65170c7a05d193c9ea33bf8f23fcc76f21a3863ffc0a2e198020ae9540149f04");
 
   padding: 1rem 2rem;
 }
@@ -22,11 +22,8 @@
 
 
 .app__navbar-links {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-left: 8rem;
+  position: absolute ;
+  left: 54rem;
 
   list-style: none;
 }

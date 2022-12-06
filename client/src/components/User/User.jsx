@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import "./User.css";
 import UserReservation from "../UserReservation/UserReservation";
 
-const User = ({ userObj }) => {
+const User = () => {
   const [userInfo, setUserInfo] = useState([]);
   const { id } = useParams();
   const userId = Number(id);
@@ -36,7 +36,7 @@ const User = ({ userObj }) => {
       </div>
 
       <div className="owner_page_restaurant">
-        <UserReservation userObj={userObj} />
+        <UserReservation />
       </div>
 
     </div>

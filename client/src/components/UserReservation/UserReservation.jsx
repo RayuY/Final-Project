@@ -4,9 +4,9 @@ import { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import "./UserReservation.css";
 import { images } from "../../constants";
-import User from "../User/User";
 
-function UserReservation({ userObj }, props) {
+function UserReservation() {
+
   const [reservationInfo, setReservationInfo] = useState([]);
   const [restaurantInfo, setRestaurantInfo] = useState([]);
   const [userInfo, setUserInfo] = useState([]);
@@ -63,13 +63,7 @@ function UserReservation({ userObj }, props) {
   const userName = name1.name;
 
   const rest1 = restaurantInfo.find((i) => i.id === restaurantId);
-
-  const restaurantName = rest1.title;
-  const restaurantImg = rest1.img;
-  const restaurantAddress = rest1.address;
-  const restaurantPhone = rest1.phone;
-  const whatever = false;
-
+  
   return (
     <div className="res_div">
       <div className="res_panel">
@@ -87,10 +81,12 @@ function UserReservation({ userObj }, props) {
             style={{ marginTop: 15 }}
           />
         </div>
-        <img className="restaurantimg" src={restaurantImg} />
-        <h1 className="res_name">{restaurantName}</h1>
-        <h3>{restaurantAddress}</h3>
-        <h3 className="res_phone">{restaurantPhone}</h3>
+
+        <img className="restaurantimg" src={rest1.img} />
+        <h1 className="restaurant__title">{rest1.title}</h1>
+        <h3>Address : {rest1.address}</h3>
+        <h3 className="res_phone">Phone : {setRestaurantInfo.phone} NEED FIX</h3>
+
       </div>
       <div className="res_bottom_links">
         <Link to={"/"}>
