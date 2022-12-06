@@ -6,8 +6,13 @@ import images from '../../constants/images';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../UserContext';
 import './Nav.css';
+import { useParams } from 'react-router-dom';
 
 const Navbar = () => {
+
+  const restId = useParams();
+  const resId = Number(restId.id);
+
 
   const { user, setUser } = useContext(UserContext);
 
@@ -18,8 +23,7 @@ const Navbar = () => {
     'User 2': "Aldwin",
     'Owner 1': "Ray",
     'Owner 2': "Gary"
-  }
-
+  };
   function roleChange() {
     if (user === 'Guest') {
       setUser('User 1');
@@ -58,7 +62,7 @@ const Navbar = () => {
       }
       {user === "User 2" &&
         <ul className="app__navbar-links">
-          <li className='p__opensans'><Link to={"/reservations/2"}> Your Reservations</Link></li>
+          <li className='p__opensans'><Link to={`/reservations/${resId}`}> Your Reservations</Link></li>
         </ul>
       }
       {user === "Owner 1" &&
