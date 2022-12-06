@@ -3,9 +3,10 @@ const express = require('express');
 const router = express.Router();
 const restaurants = require('../db/queries/restaurants');
 
+
+/* EDIT existing owner listing. */
 router.put("/:id/edit", (req, res) => {
   const body = req.body;
-  console.log("body:", body);
   const id = body.id;
   const title = body.title;
   const description = body.description;
@@ -17,6 +18,7 @@ router.put("/:id/edit", (req, res) => {
   });
 });
 
+/* EDIT existing owners table listing. */
 router.put("/:id", (req, res) => {
   const id = req.params.id;
   const body = req.body;
@@ -28,9 +30,10 @@ router.put("/:id", (req, res) => {
   });
 });
 
+
+/* ADD new owners listing. */
 router.post("/", (req, res) => {
   const body = req.body;
-  console.log("body:", body);
   const id = body.id;
   const title = body.title;
   const description = body.description;
@@ -42,18 +45,17 @@ router.post("/", (req, res) => {
   });
 });
 
+
 /* GET  restaurants listing. */
 router.get('/:id', (req, res) => {
   const id = req.params.id;
   restaurants.getRestaurantById(id).then(data => {
-    // console.log(data);
     res.json({ restaurants: data });
   });
 });
 
 router.get('/', (req, res) => {
   restaurants.getAllRestaurants().then(data => {
-    // console.log(data);
     res.json({ restaurants: data });
   });
 });

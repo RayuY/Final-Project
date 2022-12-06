@@ -21,9 +21,9 @@ const Homepage = () => {
       .catch((e) => console.error(`Error: ${e}`));
   }, []);
 
-  const row1 = Row(restaurant, 0, 10)
-  const row2 = Row(restaurant, 10, 20)
-  const row3 = Row(restaurant, 20, 35)
+  const row1 = Row(restaurant, 0, 12)
+  const row2 = Row(restaurant, 12, 23)
+  const row3 = Row(restaurant, 23, 35)
 
   if (restaurant.length === 0) {
     return null;
@@ -32,11 +32,11 @@ const Homepage = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 1000,
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2500
+    autoplaySpeed: 4000
   };
 
   return (

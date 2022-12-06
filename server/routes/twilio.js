@@ -10,6 +10,7 @@ const twilioSender = process.env.TWILIO_SENDER;
 const twilioReceiver = process.env.TWILIO_RECEIVER;
 
 
+/* GET twilio send reservation listing. */
 router.get('/', (req, res) => {
   client.messages
     .create({
@@ -19,7 +20,10 @@ router.get('/', (req, res) => {
     })
     .then(message => console.log(message.sid))
     .catch((err) => console.log("Error:", err));
+<<<<<<< HEAD
 
+=======
+>>>>>>> e946d024d668e838a9fdf26302d4b00c7357c298
   res.send(JSON.stringify({ greeting: `Hello World` }));
 });
 

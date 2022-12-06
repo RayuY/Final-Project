@@ -12,7 +12,7 @@ const AboutUs = () => (
     <div className="app__aboutus-content_history">
         <h1 className="headtext__cormorant">Aldwin Bautista</h1>
         <img src={images.aldwin} alt="profile_pic" className="profile__img" />
-        <p className="p__about">Experienced in business management and project management. Loves long walks on the beach.</p> <p className='p__about'> He also loves puns!! He thinks they're punny!!!!!</p>
+        <p className="p__about">Experienced in business management and project management.</p> <p className='p__about'>Loves long walks on the beach. Thinks puns are punny!!</p>
       </div>
 
       <div className="app__aboutus-content_history">

@@ -7,7 +7,6 @@ import { BrowserRouter as Router, Route, Routes, Link, Redirect, } from "react-r
 import { UserContext } from './UserContext';
 import { useMemo, useState } from "react";
 import Restaurant from "./components/Restaurant/Restaurant";
-import OwnerReservation from "./components/OwnerReservation/OwnerReservation";
 
 function App() {
 
