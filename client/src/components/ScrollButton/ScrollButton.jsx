@@ -1,6 +1,7 @@
+
 import React from 'react'
 import { useEffect, useState } from 'react'
-import { BiArrowFromBottom } from 'react-icons/bi'
+import { RxDoubleArrowUp } from 'react-icons/rx'
 import './ScrollButton.css'
 
 
@@ -10,7 +11,7 @@ const ScrollButton = () => {
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 500) {
+      if (window.scrollY > 200) {
         setBackToTop(true)
       } else {
         setBackToTop(false)
@@ -29,10 +30,10 @@ const ScrollButton = () => {
     <div>
       {backToTop && (
         <button className='ScrollButton'
-        onClick={scrollUp}
-        > 
-        <BiArrowFromBottom />
-        </button> )}
+          onClick={scrollUp}
+        >
+          <RxDoubleArrowUp size={15} />
+        </button>)}
     </div>
   )
 
