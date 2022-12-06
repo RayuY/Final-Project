@@ -9,11 +9,12 @@ function OwnerNew(props) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [address, setAddress] = useState("");
+  const [phone, setPhone] = useState("");
   const [image, setImage] = useState("");
   const id = props.id
 
   function handleSubmit() {
-    const newRestaurant = { id, title, description, address, image }
+    const newRestaurant = { id, title, description, address, phone, image }
     axios
       .post(`http://localhost:8000/restaurants`, newRestaurant)
       .then((res) => props.setOwnerView("OwnerRestaurant"))
@@ -40,8 +41,12 @@ function OwnerNew(props) {
               <h3>Address</h3>
               <input className="input__new_restaruant" type="table_value_2" value={address} onChange={(e) => setAddress(e.target.value)} required/>
 
+              <h3>Phone</h3>
+              <input className="input__new_restaruant" type="table_value_2" value={phone} onChange={(e) => setPhone(e.target.value)} required/>
+              
               <h3>Image</h3>
               <input className="input__new_restaruant" type="table_value_6" value={image} onChange={(e) => setImage(e.target.value)}  required />
+
 
             </form>
           </div>
