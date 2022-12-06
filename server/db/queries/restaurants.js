@@ -14,7 +14,7 @@ const getRestaurantById = id => {
 };
 
 const addNewRestaurant = (ownerId, title, description, address, image) => {
-  return db.query(`INSERT INTO restaurants (owner_id, title, address, description, img, spot2, spot4, spot6) VALUES ($1, $2, $3, $4, $5, 0, 0, 0) RETURNING *`, [ownerId, title, description, address, image])
+  return db.query(`INSERT INTO restaurants (owner_id, title, address, description, img, review, avg_price, spot2, spot4, spot6) VALUES ($1, $2, $3, $4, $5, 0, 20, 0, 0, 0) RETURNING *`, [ownerId, title, description, address, image])
 }
 
 const addTableListing = (spot2, spot4, spot6, ownerId) => {

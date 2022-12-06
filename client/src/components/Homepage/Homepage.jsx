@@ -23,7 +23,7 @@ const Homepage = () => {
 
   const row1 = Row(restaurant, 0, 10)
   const row2 = Row(restaurant, 10, 20)
-  const row3 = Row(restaurant, 20, 28)
+  const row3 = Row(restaurant, 20, 35)
 
   if (restaurant.length === 0) {
     return null;
@@ -34,7 +34,9 @@ const Homepage = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2500
   };
 
   return (
