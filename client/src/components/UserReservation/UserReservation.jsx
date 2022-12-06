@@ -6,7 +6,6 @@ import "./UserReservation.css";
 import { images } from "../../constants";
 
 function UserReservation() {
-
   const [reservationInfo, setReservationInfo] = useState([]);
   const [restaurantInfo, setRestaurantInfo] = useState([]);
   const [userInfo, setUserInfo] = useState([]);
@@ -32,10 +31,9 @@ function UserReservation() {
   function deleteReservation() {
     axios
       .delete(`http://localhost:8000/reservations/${resId}/delete`)
-      .then((res) => console.log('Delete successful', res))
+      .then((res) => console.log("Delete successful", res))
       .catch((error) => console.error(error.response.data));
   }
-
 
   if (reservationInfo.length === 0) {
     return null;
@@ -63,7 +61,7 @@ function UserReservation() {
   const userName = name1.name;
 
   const rest1 = restaurantInfo.find((i) => i.id === restaurantId);
-  
+
   return (
     <div className="res_div">
       <div className="res_panel">
@@ -85,15 +83,16 @@ function UserReservation() {
         <img className="restaurantimg" src={rest1.img} />
         <h1 className="restaurant__title">{rest1.title}</h1>
         <h3>Address : {rest1.address}</h3>
-        <h3 className="res_phone">Phone : {setRestaurantInfo.phone} NEED FIX</h3>
-
+        <h3 className="res_phone">Phone : {rest1.phone}</h3>
       </div>
-      <div className="res_bottom_links">
-        <Link to={"/"}>
+      <Link to={"/"}>
+        <div className="res_bottom_links">
           <button className="custom__button">Home Page</button>
-          <button className="custom__button" onClick={deleteReservation}>Cancel Reservation</button>
-        </Link >
-      </div>
+          <button className="custom__button" onClick={deleteReservation}>
+            Cancel Reservation
+          </button>
+        </div>
+      </Link>
     </div>
   );
 }

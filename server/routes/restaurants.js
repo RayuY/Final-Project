@@ -10,8 +10,9 @@ router.put("/:id/edit", (req, res) => {
   const title = body.title;
   const description = body.description;
   const address = body.address;
+  const phone = body.phone;
   const image = body.image;
-  restaurants.editRestaurant(id, title, description, address, image).then((data) => {
+  restaurants.editRestaurant(id, title, description, address, phone, image).then((data) => {
     return res.send("OK");
   });
 });
@@ -34,8 +35,9 @@ router.post("/", (req, res) => {
   const title = body.title;
   const description = body.description;
   const address = body.address;
+  const phone = body.phone;
   const image = body.image;
-  restaurants.addNewRestaurant(id, title, description, address, image).then((data) => {
+  restaurants.addNewRestaurant(id, title, description, address, phone, image).then((data) => {
     return res.send("OK");
   });
 });
