@@ -95,7 +95,6 @@ function UserRestaurantInfo({ restaurant }) {
       </button>
     </>
   );
-
 }
 
 export default UserRestaurantInfo;
