@@ -11,7 +11,7 @@ function UserRestaurantInfo({ restaurant }) {
   const navigate = useNavigate();
 
   const [modalOpen, setModalOpen] = useState(false);
-  
+
   const [reservation, setReservation] = useState([]);
 
   const restId = useParams();
@@ -96,7 +96,6 @@ function UserRestaurantInfo({ restaurant }) {
       </button>
     </>
   );
-
 }
 
 export default UserRestaurantInfo;
