@@ -20,10 +20,6 @@ router.get('/', (req, res) => {
     })
     .then(message => console.log(message.sid))
     .catch((err) => console.log("Error:", err));
-<<<<<<< HEAD
-
-=======
->>>>>>> e946d024d668e838a9fdf26302d4b00c7357c298
   res.send(JSON.stringify({ greeting: `Hello World` }));
 });
 
