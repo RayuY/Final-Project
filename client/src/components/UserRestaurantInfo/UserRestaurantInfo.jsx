@@ -94,7 +94,7 @@ function UserRestaurantInfo({ restaurant }) {
       >
         Reserve table !
       </button>
-
+    </>
   );
 
 }
