@@ -10,6 +10,7 @@ function OwnerEdit(props) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [address, setAddress] = useState("");
+  const [phone, setPhone] = useState("");
   const [image, setImage] = useState("");
   const id = props.id;
 
@@ -29,7 +30,7 @@ function OwnerEdit(props) {
   const restaurant = restaurantInfo.find((i) => i.owner_id === ownerId);
 
   function handleSubmit() {
-    const newRestaurant = { id, title, description, address, image };
+    const newRestaurant = { id, title, description, address, phone, image };
     axios
       .put(`http://localhost:8000/restaurants/${restaurant.id}/edit`, newRestaurant)
       .then((res) => props.setOwnerView("OwnerRestaurantInfo"))
@@ -66,6 +67,13 @@ function OwnerEdit(props) {
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
                 placeholder={restaurant.address}
+              />
+              <h3>Phone</h3>
+              <input
+                type="text"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                placeholder={restaurant.phone}
               />
               <h3>Image</h3>
               <input
