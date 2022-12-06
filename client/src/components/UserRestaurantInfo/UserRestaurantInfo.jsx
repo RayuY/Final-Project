@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link, useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import "./UserRestaurantInfo.css";
 import 'reactjs-popup/dist/index.css';
 
@@ -8,12 +8,18 @@ import Modal from "./Modal";
 
 function UserRestaurantInfo({ restaurant }) {
 
+  const navigate = useNavigate();
+
   const [modalOpen, setModalOpen] = useState(false);
+  
   const [reservation, setReservation] = useState([]);
+
+  const restId = useParams();
+  const resId = Number(restId.id);
 
   const user = {
     id: 3
-  }
+  };
 
   useEffect(() => {
     axios
@@ -28,17 +34,15 @@ function UserRestaurantInfo({ restaurant }) {
     return null;
   }
 
-  const spotReservation = reservation[reservation.length - 1].id;
-
-  const userId = user.id;
-  const restaurantId = restaurant.id;
   const partySize = 2;
 
   function handleSubmit() {
-    const newReservation = { userId, restaurantId, partySize }
-    console.log("newRest:", newReservation)
+    const newReservation = { userId: user.id, restaurantId: restaurant.id, partySize };
     axios
       .post(`http://localhost:8000/reservations`, newReservation)
+      .then((res) => {
+        navigate(`/reservations/${res.data.id}`);
+      })
       .catch((e) => console.error(`Error: ${e}`));
   }
 
@@ -83,7 +87,7 @@ function UserRestaurantInfo({ restaurant }) {
           </div>
         </div>
       </div>
-      <Link to={`/reservations/${spotReservation + 1}`}>
+
       <button
         className="custom__button"
         onClick={handleSubmit}
@@ -91,8 +95,6 @@ function UserRestaurantInfo({ restaurant }) {
         Reserve table !
       </button>
 
-      </Link>
-    </>
   );
 
 }

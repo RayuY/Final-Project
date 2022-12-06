@@ -6,6 +6,7 @@ CREATE TABLE restaurants (
   owner_id integer REFERENCES owners(id) ON DELETE CASCADE NOT NULL,
   title VARCHAR(255) NOT NULL,
   address VARCHAR(255) NOT NULL,
+  phone VARCHAR(12) NOT NULL,
   description TEXT,
   img TEXT,
   review INT DEFAULT 0,
