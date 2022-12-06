@@ -9,6 +9,7 @@ const usersRouter = require('./routes/users');
 const ownersRouter = require('./routes/owners');
 const restaurantsRouter = require('./routes/restaurants');
 const reservationsRouter = require('./routes/reservations');
+const twilioRouter = require('./routes/twilio');
 
 const app = express();
 
@@ -24,5 +25,7 @@ app.use('/users', usersRouter);
 app.use('/owners', ownersRouter);
 app.use('/restaurants', restaurantsRouter);
 app.use('/reservations', reservationsRouter);
+
+app.use('/twilio', twilioRouter);
 
 module.exports = app;
