@@ -9,10 +9,8 @@ const client = require('twilio')(accountSid, authToken);
 const twilioSender = process.env.TWILIO_SENDER;
 const twilioReceiver = process.env.TWILIO_RECEIVER
 
-console.log("accSid:", accountSid);
-console.log("twiSen:", twilioSender);
-console.log("twiRec:", twilioReceiver);
 
+/* GET twilio send reservation listing. */
 router.get('/', (req, res) => {
   client.messages
     .create({
@@ -22,7 +20,6 @@ router.get('/', (req, res) => {
      })
     .then(message => console.log(message.sid))
     .catch((err) => console.log("Error:", err));
-  
   res.send(JSON.stringify({ greeting: `Hello World` }));
 });
 
