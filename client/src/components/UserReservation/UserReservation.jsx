@@ -63,7 +63,7 @@ function UserReservation() {
   const userName = name1.name;
 
   const rest1 = restaurantInfo.find((i) => i.id === restaurantId);
-  
+
   return (
     <div className="res_div">
       <div className="res_panel">
