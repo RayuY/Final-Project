@@ -47,10 +47,9 @@ const Restaurant = () => {
       </div>
 
       <UserRestaurantInfo restaurant={restaurant} />
-
+      
       <div className="owner_bottom_links">
-        <button className="custom__button">View reservation</button>
-
+  
         <Link to={"/"}>
           <button className="custom__button">Back to main page</button>
         </Link>

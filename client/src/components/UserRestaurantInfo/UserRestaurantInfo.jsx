@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext  } from "react";
+import { UserContext } from '../../UserContext';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./UserRestaurantInfo.css";
@@ -7,6 +8,7 @@ import Modal from "./Modal";
 
 function UserRestaurantInfo({ restaurant }) {
 
+  const { userR, setUser } = useContext(UserContext);
   const navigate = useNavigate();
 
   const [modalOpen, setModalOpen] = useState(false);
@@ -44,7 +46,7 @@ function UserRestaurantInfo({ restaurant }) {
 
   let review = '⭐';
   let noReview = 'No reviews yet.';
-
+  
 
   return (
     <>
@@ -83,13 +85,14 @@ function UserRestaurantInfo({ restaurant }) {
           </div>
         </div>
       </div>
-
+      {userR !== 'Guest' &&
       <button
         className="custom__button"
         onClick={handleSubmit}
       >
         Reserve table !
       </button>
+            }
     </>
   );
 }

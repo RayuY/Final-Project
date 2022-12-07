@@ -61,9 +61,8 @@
 }
 
 .custom__button {
-  width: 150px;
+  width: 15rem;
   font-size: 20px;
-  justify-content:flex-end;
 }
 
 .list_of_seats li {

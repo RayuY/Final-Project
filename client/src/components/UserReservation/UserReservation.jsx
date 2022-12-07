@@ -18,7 +18,7 @@ function UserReservation() {
       axios.get("http://localhost:8000/reservations"),
       axios.get("http://localhost:8000/restaurants"),
       axios.get("http://localhost:8000/users"),
-      axios.get("http://localhost:8000/twilio"),
+      // axios.get("http://localhost:8000/twilio"),
     ])
       .then((all) => {
         setReservationInfo(all[0].data.reservations);
@@ -49,8 +49,11 @@ function UserReservation() {
   const reservation1 = reservationInfo.find((i) => i.id === resId);
   if (!reservation1) {
     return (
-      <div className="res_div">
-        {<h2>You currently have no reservation</h2>}
+      <div className="res_div p__opensans">
+        {<h1>You currently have no reservation</h1>}
+        <Link to={"/"}>
+          <h1 className="link__to__home">Start Checking restaurants</h1>
+        </Link>
       </div>
     );
   }
