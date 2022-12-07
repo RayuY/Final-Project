@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext  } from "react";
 import axios from "axios";
 import {
   useParams,
@@ -15,10 +15,14 @@ import OwnerNew from "../OwnerNew/OwnerNew";
 import OwnerEdit from "../OwnerEdit/OwnerEdit"
 import { IoMdAddCircle } from "react-icons/io";
 
+import { UserContext } from '../../UserContext';
+
+
 const Owner = () => {
   const [state, setState] = useState([]);
   const { id } = useParams();
   const userId = Number(id);
+  const { user, setUser } = useContext(UserContext);
 
   const [ownerView, setOwnerView] = useState("OwnerRestaurant");
 
@@ -62,7 +66,9 @@ const Owner = () => {
           <p className="owner_page_add_new p__opensans">Add new restaurant</p>
         </div>
       </div>
-
+      {user === 'Gary' &&
+        <h1>No active restaurants</h1>
+      }
       <div className="owner_page_restaurant">
         {ownerView === "OwnerRestaurant" && (
           <OwnerRestaurant setOwnerView={setOwnerView} id={id} />
@@ -85,18 +91,20 @@ const Owner = () => {
       </div>
 
       <div className="owner_bottom_links">
-        <button
-          className="custom__button"
-          onClick={() => setOwnerView("OwnerReservation")}
-        >
-          See listed tables
-        </button>
-        <button
-          className="custom__button"
-          onClick={() => setOwnerView("OwnerRestaurant")}
-        >
-          My restaurants
-        </button>
+          <button
+            className="custom__button"
+            onClick={() => setOwnerView("OwnerReservation")}
+          >
+            See listed tables
+          </button>
+
+
+          <button
+            className="custom__button"
+            onClick={() => setOwnerView("OwnerRestaurant")}
+          >
+            My restaurants
+          </button>
       </div>
     </div>
   );

@@ -44,7 +44,7 @@ function OwnerTable(props) {
         <h2 className="restaurant__title">{restaurant.title}</h2>
         <div className="owner_table_main">
           <div className="owner_table_num_of_seats">
-            <h3 className='p__opensans'>Number of Seats</h3>
+            <h3 className='p__opensans'>Table Size</h3>
             <ul className="list_of_seats">
               <h3>
                 <li>2</li>
@@ -70,7 +70,7 @@ function OwnerTable(props) {
         </div>
       </div>
       <button className="custom__button" onClick={handleSubmit}>
-        List tables!
+        Update Availibity
       </button>
     </>
   );

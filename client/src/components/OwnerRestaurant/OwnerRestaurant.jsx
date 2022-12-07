@@ -28,8 +28,7 @@ function OwnerRestaurant(props) {
     <div className="owner_restaurant">
       <h1 className="restaurant__title">{restaurant.title}</h1>
       <img className="owner_restaurant_image" src={restaurant.img} onClick={() => props.setOwnerView("OwnerRestaurantInfo")} />
-
-      <button className="custom__button" onClick={() => props.setOwnerView("OwnerTable")} >List table!</button>
+      
     </div>
   );
 }

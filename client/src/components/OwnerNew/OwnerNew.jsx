@@ -27,7 +27,7 @@ function OwnerNew(props) {
       <div className="owner_restaurant_info">
         <div className="owner_new_container">
           <div className="owner_new_info p__opensans">
-            <h2>Enter your new restaurant info:</h2>
+            <h2>Create New Restaurant</h2>
           </div>
           <div className="owner_new_input p__opensans">
             <form>
@@ -62,7 +62,7 @@ function OwnerNew(props) {
         className="custom__button"
         onClick={(handleSubmit)}
       >
-        Add restaurant !
+        Create Restaurant !
       </button>
     </div>
   );

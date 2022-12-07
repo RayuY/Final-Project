@@ -23,8 +23,7 @@
 
 .app__navbar-links {
   position: absolute ;
-  left: 54rem;
-
+  left: 51rem;;
   list-style: none;
 }
 
@@ -35,10 +34,11 @@
 .app__navbar-links li {
   margin: 0 1rem;
   cursor: pointer;
+  font-size: x-large;
 }
 
 .app__navbar-links li:hover {
-  color: var(--color-grey)
+  color: goldenrod
 }
 
 .app__navbar-login {

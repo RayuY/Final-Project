@@ -40,15 +40,15 @@ const Homepage = () => {
   return (
     <div className="background">
       <div className="restaurants">
-        <h1 className='p__opensans'>By Price</h1>
+        <h1 className='p__opensans'></h1>
         <Slider  {...settings}>
           {row1}
         </Slider>
-        <h1 className='p__opensans'>By Location</h1>
+        <h1 className='p__opensans'></h1>
         <Slider  {...settings}>
           {row2}
         </Slider>
-        <h1 className='p__opensans'>By Cuisine Type</h1>
+        <h1 className='p__opensans'></h1>
         <Slider  {...settings}>
           {row3}
         </Slider>

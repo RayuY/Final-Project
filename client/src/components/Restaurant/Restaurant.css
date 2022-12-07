@@ -32,3 +32,8 @@
 .owner_page_add {
   padding-top: 1rem;
 }
+
+.custom__button{
+  display:flex;
+  justify-content: center;
+}

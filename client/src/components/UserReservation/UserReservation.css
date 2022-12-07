@@ -7,6 +7,15 @@
   height: 100%;
 }
 
+.link__to__home{
+  margin-top: 1rem;
+}
+
+.link__to__home:hover{
+  margin-top: 1rem;
+  color: goldenrod;
+}
+
 .res_panel {
   width: 65%;
   height: 41rem;
@@ -24,7 +33,7 @@
 .res_div_spoon {
   width: 10vw;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: 1rem;
 }
 

@@ -28,7 +28,7 @@ function OwnerReservation(props) {
         <h2 className="owner_table_name ">Currently Listed Tables</h2>
         <div className="owner_table_main">
           <div className="owner_table_num_of_seats p__opensans">
-            <h3>Number of Seats</h3>
+            <h3>Table Size</h3>
             <ul className="list_of_seats">
               <h3>
                 <li>2</li>
@@ -55,7 +55,7 @@ function OwnerReservation(props) {
           className="custom__button"
           onClick={() => props.setOwnerView("OwnerTable")}
         >
-          Edit tables!
+          Edit Tables
         </button>
       </div>
     </>
