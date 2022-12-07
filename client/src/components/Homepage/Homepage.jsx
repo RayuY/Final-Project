@@ -48,7 +48,7 @@ const Homepage = () => {
         <Slider  {...settings}>
           {row2}
         </Slider>
-        <h1 className='p__opensans'>By Cusine Type</h1>
+        <h1 className='p__opensans'>By Cuisine Type</h1>
         <Slider  {...settings}>
           {row3}
         </Slider>
