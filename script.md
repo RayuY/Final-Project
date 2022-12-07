@@ -1,15 +1,13 @@
 
 # Your demo should be around 5 minutes long. For your demo, you should include details on the
-tech stack, as well as more technical obstacles and learning curves.
 
 !! RUN DB:RESET
-
 
 
 ###
 
 # (Guest)
-- TableBae is built using the PERN stack, for the demo we've added a button using useContext to manage roles quickly so we don't need to deal with the Login/Register. so as a user is browsing through the website, I click a restaurant to go to that specific restaurant's page with more details, to see more pictures. # (Transition user1)
+- TableBae is a single page app built by using the popular PERN stack, for the demo we've added a button to manage roles quickly so we don't need to deal with the Login/Register. so as a visitor, i can browse through the website, I click a restaurant to go to that specific restaurant's page with more details, to see more pictures. 
 
 # (Make/Cancel a reservation)
 - Now let's take a look at what a user can do, and we are going to sign in as Aldwin. He currently has no reservations and let's just arbitrarily book one for him, and he should get a text from twilio any moment. Sweet.. and if anything happens he can just cancel it.
@@ -20,23 +18,28 @@ tech stack, as well as more technical obstacles and learning curves.
 # (Create Restaraunt -> homepage)
 - We've limited the number of restaurants to one per owner to avoid monopoly, so let's switch to another owner ..(add a restaurant)
 
-- That's all the core features for our app. Now i'll pass to Aldwin who's going to talk a bit about the challenges we had during the project.
+- That's all the core features for our app. Now i'll pass to Aldwin who's going to talk a bit about the challenges we encountered during the project.
 
 ###
 
--Hi Everyone I'm Ray and i'm a fullstack developer, before lighthouse labs I used to be a sushi chef.
-
-### Introductions - tell them your name and your background!
-                    <<45-60 seconds total, so 15-20 seconds a person>>"
+- Hi Everyone I'm Ray and i'm a fullstack developer, before lighthouse labs I used to be a sushi chef.
 
 
 
-Hi Everyone I'm Matt and I've retired from my days of raiding and pillaging to become a full baked potato
 
-Hello everyone!! My name is dskfjalsjfalsflskh, but you can call me Aldwin. I'm a front-end and back-end developer which takes more time to say than fullstack developer.
 
-and we present to you TableBae.
-"
+
+
+
+
+
+
+
+
+
+
+
+
 
 ( "ALDWIN" ) ~ 40 secs ~
 ### Inspiration for the project (the User Story or Pitch)
