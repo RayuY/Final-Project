@@ -7,7 +7,9 @@
 ###
 
 # (Guest)
-- TableBae is a single page app built by using the popular PERN stack, for the demo we've added a button to manage roles quickly so we don't need to deal with the Login/Register. so as a visitor, i can browse through the website, I click a restaurant to go to that specific restaurant's page with more details, to see more pictures. 
+- For the demo we've added a button to manage roles quickly so we don't need to deal with the Login/Register. 
+
+so as a visitor, i can browse through the website, I click a restaurant to go to that specific restaurant's page with more details, to see more pictures. 
 
 # (Make/Cancel a reservation)
 - Now let's take a look at what a user can do, and we are going to sign in as Aldwin. He currently has no reservations and let's just arbitrarily book one for him, and he should get a text from twilio any moment. Sweet.. and if anything happens he can just cancel it.
@@ -22,7 +24,7 @@
 
 ###
 
-- Hi Everyone I'm Ray and i'm a fullstack developer, before lighthouse labs I used to be a sushi chef.
+- Hi Everyone I'm Ray and i'm a fullstack developer. Before lighthouse labs I used to be a sushi chef.
 
 
 

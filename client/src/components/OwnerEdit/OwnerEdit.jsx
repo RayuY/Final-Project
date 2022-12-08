@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./OwnerEdit.css";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function OwnerEdit(props) {
   const ownerId = Number(props.id);
@@ -49,14 +50,14 @@ function OwnerEdit(props) {
               <h3>Name</h3>
               <input
                 type="text"
-                value={title}
+                value={restaurant.title}
                 onChange={(e) => setTitle(e.target.value)}
                 placeholder={restaurant.title}
               />
               <h3>Description</h3>
               <input
                 type="text"
-                value={description}
+                value={restaurant.description}
                 onChange={(e) => setDescription(e.target.value)}
                 placeholder="Description"
                 className={restaurant.description}
@@ -64,21 +65,21 @@ function OwnerEdit(props) {
               <h3>Address</h3>
               <input
                 type="text"
-                value={address}
+                value={restaurant.address}
                 onChange={(e) => setAddress(e.target.value)}
                 placeholder={restaurant.address}
               />
               <h3>Phone</h3>
               <input
                 type="text"
-                value={phone}
+                value={restaurant.phone}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder={restaurant.phone}
               />
               <h3>Image</h3>
               <input
                 type="text"
-                value={image}
+                defaultValue={restaurant.img}
                 onChange={(e) => setImage(e.target.value)}
                 placeholder={restaurant.img}
               />
@@ -86,12 +87,14 @@ function OwnerEdit(props) {
           </div>
         </div>
         <div>
-          <img className="owner_restaurant_info_image" src={restaurant.img} alt ='rest-info-img' />
+          <img className="owner_restaurant_info_image" src={restaurant.img} alt='rest-info-img' />
         </div>
       </div>
-      <button className="custom__button" onClick={handleSubmit}>
-        Save restaurant !
-      </button>
+     
+        <button className="custom__button" onClick={handleSubmit}>
+          Save restaurant !
+        </button>
+  
     </div>
   );
 }
