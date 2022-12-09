@@ -24,7 +24,7 @@ const AboutUs = () => (
       <div className="app__aboutus-content_history">
         <h1 className="headtext__cormorant">Ray Yu</h1>
         <img src={images.ray} alt="profile_pic" className="profile__img" />
-        <p className="p__about">Previously a sushi chef and warehouse associate. Ray loves sushi and dark jokes.</p> <p className='p__about'> "Tequila may not fix your life.. but it's worth a shot."</p>
+        <p className="p__about">Previously a sushi chef and warehouse associate. Ray loves sushi and dad jokes.</p> <p className='p__about'> "Tequila may not fix your life.. but it's worth a shot."</p>
       </div>
     </div>
   </div>

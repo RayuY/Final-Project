@@ -38,10 +38,10 @@ function OwnerNew(props) {
             <form>
 
               <h3>Name</h3>
-              <input className="input__new_restaruant" type="table_value_2" value='Exploding duck' onChange={(e) => setTitle(e.target.value)} required />
+              <input className="input__new_restaruant" type="table_value_2" value='Ray 2 . 0' onChange={(e) => setTitle(e.target.value)} required />
 
               <h3>Description</h3>
-              <input className="input__new_restaruant" type="table_value_2" value='Most tender duck meant you will ever have' onChange={(e) => setDescription(e.target.value)} required />
+              <input className="input__new_restaruant" type="table_value_2" value='The best' onChange={(e) => setDescription(e.target.value)} required />
 
               <h3>Address</h3>
               <input className="input__new_restaruant" type="table_value_2" value='1337 Bejin street, Vancouver' onChange={(e) => setAddress(e.target.value)} required />
