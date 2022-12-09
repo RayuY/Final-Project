@@ -7,22 +7,22 @@
 ###
 
 # (Guest)
-- TableBae is a single page app built by using the popular PERN stack, for the demo we've added a button to manage roles quickly so we don't need to deal with the Login/Register. so as a visitor, i can browse through the website, I click a restaurant to go to that specific restaurant's page with more details, to see more pictures. 
+- For the demo we've added a button to switch roles quickly so we don't need to deal with the Login/Register. 
 
 # (Make/Cancel a reservation)
-- Now let's take a look at what a user can do, and we are going to sign in as Aldwin. He currently has no reservations and let's just arbitrarily book one for him, and he should get a text from twilio any moment. Sweet.. and if anything happens he can just cancel it.
+- Now let's go ahead and sign in as Aldwin. So as a user you can check your reservations. Aldwin currently has no reservations but i know he's hungry cause he's a big boy. I also know that he likes ramens. Get a text from twilio any second. Sweet.. and if there's a change of plan he can just simply cancel it.
 
 # (List table, Edit -> )
-- Now let's see what a owner can do. Owner can list tables for his restaurant ..(list tables), EDIT(click img) restaurant ..(change picture)
-
-# (Create Restaraunt -> homepage)
-- We've limited the number of restaurants to one per owner to avoid monopoly, so let's switch to another owner ..(add a restaurant)
-
-- That's all the core features for our app. Now i'll pass to Aldwin who's going to talk a bit about the challenges we encountered during the project.
+- Next I'm going to sign in as a restaurant owner, and I can manage my restaurant. i can list tables EDIT(click img) restaurant ..(change picture)
+- That's all the core features for our app. Now I'll pass back to Aldwin who's going to talk about some of challenges we encountered during the project.
 
 ###
 
-- Hi Everyone I'm Ray and i'm a fullstack developer, before lighthouse labs I used to be a sushi chef.
+- Hi Everyone I'm Ray and i'm a fullstack developer. Before lighthouse labs I used to be a sushi chef.
+
+
+
+
 
 
 

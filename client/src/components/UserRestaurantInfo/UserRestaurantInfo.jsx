@@ -38,9 +38,9 @@ function UserRestaurantInfo({ restaurant }) {
     const newReservation = { userId: user.id, restaurantId: restaurant.id, partySize };
     axios
       .post(`http://localhost:8000/reservations`, newReservation)
-      .then((res) => {
+     .then((res) => {
         navigate(`/reservations/${res.data.id}`);
-      })
+      }) 
       .catch((e) => console.error(`Error: ${e}`));
   }
 
